@@ -231,30 +231,33 @@
 
 
         <!-- Product Selector -->
-        <div class="product_selector-conten border-2 border-[#f3eee0] bg-[#f3eee0] gap-2 mt-6">
+        <div class="product_selector-content border-2 border-[#f3eee0] bg-[#f3eee0] flex flex-col mt-6">
           <!-- Option 1: 1 Bottle -->
-          <div class="p-3">
-            <div class="border-1 border-[#039869] rounded-xl overflow-hidden">
-              <div class="flex bg-white rounded-lg p-4 gap-2 items-center justify-between">
-                <div>1</div>
-                <div>
-                  <div>1 Botlle</div>
-                  <div>1 bottle total | Save total </div>
+          <div class="p-3 selector-option active" data-price="$31.96">
+            <div class="border-2 border-[#039869] rounded-xl overflow-hidden">
+              <div class="flex bg-white rounded-lg p-4 gap-3 items-center">
+                <div
+                  class="w-8 h-8 rounded-full border-[3px] border-[#039869] flex items-center justify-center shrink-0">
+                  <div class="w-4 h-4 rounded-full bg-[#039869]"></div>
                 </div>
-                <div>
-                  <div>$31.96</div>
-                  <div>$51.23</div>
+                <div class="flex-1">
+                  <div class="font-bold text-base">1 Bottle</div>
+                  <div class="text-xs text-gray-600">1 bottle total | Save $27.99</div>
                 </div>
-
+                <div class="text-right">
+                  <div class="font-bold text-base">$31.96</div>
+                  <div class="text-xs text-gray-400 line-through">$59.95</div>
+                </div>
               </div>
 
-              <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
-
-                <div>
-                  <img src="/assets/truck.png" alt="" class="w-8 h-8">
-                </div>
-                <div class="text-white font-semibold">
-                  Free USA Shipping
+              <div class="divide-y divide-white">
+                <div class="py-2 px-3 flex items-center gap-3 bg-[#039869]">
+                  <div>
+                    <img src="/assets/truck.png" alt="" class="w-6 h-6">
+                  </div>
+                  <div class="text-white font-semibold text-sm">
+                    Free USA Shipping
+                  </div>
                 </div>
               </div>
 
@@ -263,37 +266,40 @@
 
           </div>
           <!-- Option 2: 2 Bottles -->
-          <div class="p-3">
-            <div class="border-1 border-[#039869] rounded-xl overflow-hidden">
-              <div class="flex bg-white rounded-lg p-4 gap-2 items-center justify-between">
-                <div>1</div>
-                <div>
-                  <div>1 Botlle</div>
-                  <div>1 bottle total | Save total </div>
+          <div class="p-3 selector-option relative" data-price="$63.92">
+            <div class="absolute -top-10 -right-2 z-10  scale-90">
+              <img src="/assets/valentine_day.svg" alt="Valentine's Day Sale" class="w-26 h-26">
+            </div>
+            <div class="border-2 border-gray-200 rounded-xl overflow-hidden">
+              <div class="flex bg-white rounded-lg p-4 gap-3 items-center">
+                <div
+                  class="w-8 h-8 rounded-full border-[3px] border-gray-300 flex items-center justify-center shrink-0">
+                  <div class="w-4 h-4 rounded-full bg-transparent"></div>
                 </div>
-                <div>
-                  <div>$31.96</div>
-                  <div>$51.23</div>
+                <div class="flex-1">
+                  <div class="font-bold text-base">Buy 2 Get 1 Free</div>
+                  <div class="text-xs text-gray-600">3 bottles total | Save $115.93</div>
                 </div>
-
+                <div class="text-right">
+                  <div class="font-bold text-base">$63.92</div>
+                  <div class="text-xs text-gray-400 line-through">$179.85</div>
+                </div>
               </div>
               <div class="divide-y divide-white">
-                <div class="py-1 px-2 flex items-center gap-2 bg-[#039869]">
-
+                <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                   <div>
-                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                    <img src="/assets/truck.png" alt="" class="w-6 h-6">
                   </div>
-                  <div class="text-white font-semibold">
+                  <div class="text-white font-semibold text-sm">
                     Free USA Shipping
                   </div>
                 </div>
-                <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
-
+                <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                   <div>
-                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                    <img src="/assets/download.png" alt="" class="w-6 h-6">
                   </div>
-                  <div class="text-white font-semibold">
-                    Free USA Shipping
+                  <div class="text-white font-semibold text-sm">
+                    Free Anti-Bloating Protocol E-book
                   </div>
                 </div>
               </div>
@@ -301,37 +307,46 @@
 
           </div>
           <!-- Option 3: 3 Bottles -->
-          <div class="p-3">
-            <div class="border-1 border-[#039869] rounded-xl overflow-hidden">
-              <div class="flex bg-white rounded-lg p-4 gap-2 items-center justify-between">
-                <div>1</div>
-                <div>
-                  <div>1 Botlle</div>
-                  <div>1 bottle total | Save total </div>
+          <div class="p-3 selector-option" data-price="$95.88">
+            <div class="border-2 border-gray-200 rounded-xl overflow-hidden">
+              <div class="flex bg-white rounded-lg p-4 gap-3 items-center">
+                <div
+                  class="w-8 h-8 rounded-full border-[3px] border-gray-300 flex items-center justify-center shrink-0">
+                  <div class="w-4 h-4 rounded-full bg-transparent"></div>
                 </div>
-                <div>
-                  <div>$31.96</div>
-                  <div>$51.23</div>
+                <div class="flex-1">
+                  <div class="font-bold text-base">Buy 3 Get 2 Free</div>
+                  <div class="text-xs text-gray-600">5 bottles total | Save $203.87</div>
                 </div>
-
+                <div class="text-right">
+                  <div class="font-bold text-base">$95.88</div>
+                  <div class="text-xs text-gray-400 line-through">$299.75</div>
+                </div>
               </div>
               <div class="divide-y divide-white">
-                <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
-
+                <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                   <div>
-                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                    <img src="/assets/truck.png" alt="" class="w-6 h-6">
                   </div>
-                  <div class="text-white font-semibold">
+                  <div class="text-white font-semibold text-sm">
                     Free USA Shipping
                   </div>
                 </div>
-                <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
 
+                <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                   <div>
-                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                    <img src="/assets/download.png" alt="" class="w-6 h-6">
                   </div>
-                  <div class="text-white font-semibold">
-                    Free USA Shipping
+                  <div class="text-white font-semibold text-sm">
+                    Free Anti-Bloating Protocol E-book
+                  </div>
+                </div>
+                <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
+                  <div>
+                    <img src="/assets/gift.avif" alt="" class="w-6 h-6">
+                  </div>
+                  <div class="text-white font-semibold text-sm">
+                    $20 Gift Card
                   </div>
                 </div>
               </div>
@@ -344,7 +359,7 @@
         <!-- Add to Cart Button -->
         <button
           class="w-full bg-[#108474] text-white font-bold text-lg py-4 rounded-full mt-4 hover:bg-[#0c665a] transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform uppercase tracking-wide">
-          ADD TO CART - <span id="atc-price">$63.92</span>
+          ADD TO CART - <span id="atc-price">$31.96</span>
         </button>
 
         <!-- Trust Badges -->

@@ -7,17 +7,58 @@ document.addEventListener('DOMContentLoaded', () => {
             // Remove active state from all
             options.forEach(opt => {
                 opt.classList.remove('active');
-                opt.classList.remove('border-2', 'border-black', 'bg-[#fff6f6]');
-                opt.classList.add('border-gray-200', 'bg-white');
-                // Hide perks
-                // Tailwind group-[.active]:block handles visibility, 
-                // but we need to toggle the 'active' class on the parent
+                // Reset border on inner div
+                const innerDiv = opt.querySelector('div');
+                if (innerDiv) {
+                    innerDiv.classList.remove('border-[#039869]');
+                    innerDiv.classList.add('border-gray-200');
+                }
+                // Reset radio button
+                const radioOuter = opt.querySelector('.w-8.h-8.rounded-full');
+                const radioInner = radioOuter?.querySelector('.w-4.h-4.rounded-full');
+                if (radioOuter) {
+                    radioOuter.classList.remove('border-[#039869]');
+                    radioOuter.classList.add('border-gray-300');
+                }
+                if (radioInner) {
+                    radioInner.classList.remove('bg-[#039869]');
+                    radioInner.classList.add('bg-transparent');
+                }
+
+                // Reset perk colors to inactive state
+                const perkRows = opt.querySelectorAll('.divide-y > div');
+                perkRows.forEach(perk => {
+                    perk.classList.remove('bg-[#039869]');
+                    perk.classList.add('bg-[#5aae95]');
+                });
             });
 
             // Add active state to clicked
             option.classList.add('active');
-            option.classList.remove('border-gray-200', 'bg-white');
-            option.classList.add('border-2', 'border-black', 'bg-[#fff6f6]');
+            // Set border on inner div
+            const innerDiv = option.querySelector('div');
+            if (innerDiv) {
+                innerDiv.classList.remove('border-gray-200');
+                innerDiv.classList.add('border-[#039869]');
+            }
+            // Set radio button to active
+            const radioOuter = option.querySelector('.w-8.h-8.rounded-full');
+            const radioInner = radioOuter?.querySelector('.w-4.h-4.rounded-full');
+            if (radioOuter) {
+                radioOuter.classList.remove('border-gray-300');
+                radioOuter.classList.add('border-[#039869]');
+            }
+            if (radioInner) {
+                radioInner.classList.remove('bg-transparent');
+                radioInner.classList.add('bg-[#039869]');
+            }
+
+            // Set perk colors for selected state (all dark green)
+            const perkRows = option.querySelectorAll('.divide-y > div');
+            perkRows.forEach((perk) => {
+                perk.classList.remove('bg-[#5aae95]');
+                perk.classList.add('bg-[#039869]');
+            });
 
             // Update ATC Price
             const price = option.getAttribute('data-price');

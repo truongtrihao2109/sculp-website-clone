@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Montserrat", sans-serif;
+    --font-serif: "Trirong", serif;
+}

@@ -37,102 +37,86 @@
         <div class="gallery-wrapper w-full">
 
           <!-- Desktop: Grid Layout -->
-          <div class="hidden md:grid grid-cols-2 gap-4">
-            <div class="col-span-2">
-              <img src="/assets/product/product-1.jpg" alt="Sculptique Lymphatic Drainage Capsules"
+          <div class="hidden md:grid grid-cols-3 gap-4">
+            <!-- Image 1: Full width with Nutritional Info button -->
+            <div class="col-span-3 relative">
+              <img src="/assets/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
+                alt="Sculptique Lymphatic Drainage Capsules" class="w-full h-auto rounded-none">
+              <!-- Nutritional Information Button -->
+              <button
+                class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white hover:bg-gray-50 text-gray-800 px-6 py-3 rounded-full shadow-lg flex items-center gap-2 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                  </path>
+                </svg>
+                <span class="font-medium text-sm">Nutritional Information</span>
+              </button>
+            </div>
+
+            <!-- Images 2 & 3: Two columns (span 1.5 each to fill 3-column grid) -->
+            <div class="col-span-3 grid grid-cols-2 gap-4">
+              <div>
+                <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
+                  class="w-full h-auto rounded-none">
+              </div>
+              <div>
+                <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
+                  class="w-full h-auto rounded-none">
+              </div>
+            </div>
+
+            <!-- Images 4, 5 & 6: Three columns -->
+            <div class="col-span-1">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
                 class="w-full h-auto rounded-none">
             </div>
             <div class="col-span-1">
-              <img src="/assets/product/product-2.jpg" loading="lazy" class="w-full h-auto rounded-none">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
+                class="w-full h-auto rounded-none">
             </div>
             <div class="col-span-1">
-              <img src="/assets/product/product-3.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-2">
-              <img src="/assets/product/product-4.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-1">
-              <img src="/assets/product/product-5.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-1">
-              <img src="/assets/product/product-6.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-2">
-              <img src="/assets/product/product-7.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-1">
-              <img src="/assets/product/product-8.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-1">
-              <img src="/assets/product/product-9.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-2">
-              <img src="/assets/product/product-10.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-1">
-              <img src="/assets/product/product-11.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-1">
-              <img src="/assets/product/product-12.jpg" loading="lazy" class="w-full h-auto rounded-none">
-            </div>
-            <div class="col-span-2">
-              <img src="/assets/product/product-13.jpg" loading="lazy" class="w-full h-auto rounded-none">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
+                class="w-full h-auto rounded-none">
             </div>
           </div>
 
           <!-- Mobile: Scroll-Snap Carousel -->
           <div class="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 p-4 scrollbar-hide">
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-1.jpg" alt="Sculptique Capsules"
+              <img src="/assets/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
+                alt="Sculptique Capsules" class="w-full h-auto rounded-lg shadow-sm">
+            </div>
+            <div class="snap-center shrink-0 w-[85vw]">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
                 class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-2.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
+                class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-3.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
+                class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-4.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
+                class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-5.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-6.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-7.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-8.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-9.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-10.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-11.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-12.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product/product-13.jpg" loading="lazy" class="w-full h-auto rounded-lg shadow-sm">
+              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
+                class="w-full h-auto rounded-lg shadow-sm">
             </div>
           </div>
         </div>
 
         <!-- Product Info (Fixed on Desktop) -->
-        <div class="product-info-wrapper md:sticky md:top-24">
+        <div class="product-info-wrapper">
           <div class="mb-4">
 
-            <div class="flex items-center mt-3 space-x-2">
-              <div class="flex text-[#FA8A8A] text-sm tracking-tight">
-                <!-- 5 Stars -->
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <div class="flex items-center space-x-3">
+              <div class="flex items-center">
+                <img src="/assets/five_stars.png" alt="5 Stars" class="h-[17px] w-auto object-contain">
               </div>
               <span class="text-sm font-medium text-gray-500 underline decoration-gray-300 underline-offset-2">4.8/5
                 Excellent | Based on 2381 Reviews</span>
@@ -143,159 +127,232 @@
             New Maximum Potency Formula - Lymphatic Drainage Capsules by Sculptique™
           </h1>
 
-          <!-- Features -->
-          <div class="bg-gray-50 p-4 rounded-lg mb-6 border border-gray-100">
-            <!-- Benefits List with Icons -->
-            <div class="grid grid-cols-1 gap-4 mb-8">
-              <div class="flex items-start gap-4">
-                <img src="/assets/icons/benefits/icon-people.png" class="w-8 h-8 object-contain shrink-0" alt="People">
-                <p class="text-sm font-medium leading-tight pt-1">Join over 93 Thousand who say - it WORKS!</p>
-              </div>
-              <div class="flex items-start gap-4">
-                <img src="/assets/icons/benefits/icon-cycle.png" class="w-8 h-8 object-contain shrink-0" alt="Cycle">
-                <p class="text-sm font-medium leading-tight pt-1">Restores your body’s natural 24-hour lymphatic cycle
-                </p>
-              </div>
-              <div class="flex items-start gap-4">
-                <img src="/assets/icons/benefits/icon-body.png" class="w-8 h-8 object-contain shrink-0" alt="Body">
-                <p class="text-sm font-medium leading-tight pt-1">Helps reduce fluid retention and the appearance of
-                  puffiness and bloating</p>
-              </div>
-              <div class="flex items-start gap-4">
-                <img src="/assets/icons/benefits/icon-sleep.png" class="w-8 h-8 object-contain shrink-0" alt="Sleep">
-                <p class="text-sm font-medium leading-tight pt-1">Helps fall asleep faster, stay asleep longer and wake
-                  up energized</p>
-              </div>
-              <div class="flex items-start gap-4">
-                <img src="/assets/icons/benefits/icon-joint.png" class="w-8 h-8 object-contain shrink-0" alt="Joints">
-                <p class="text-sm font-medium leading-tight pt-1">Eliminates joint stiffness, pain, morning creakiness
-                  and feel more grounded</p>
-              </div>
-              <div class="flex items-start gap-4">
-                <img src="/assets/icons/benefits/icon-natural.png" class="w-8 h-8 object-contain shrink-0"
-                  alt="Natural">
-                <p class="text-sm font-medium leading-tight pt-1">Boosts energy, mental clarity and emotional balance
-                </p>
-              </div>
+
+
+          <!-- Benefits List with Icons -->
+          <div class="grid grid-cols-1 mb-8">
+            <div class="flex items-center gap-3 my-4">
+              <img src="/assets/population_12285628_1_e864791e-7a6d-4f08-9aea-3aeffba37cc7.png"
+                class="w-13 h-13 object-contain shrink-0" alt="People">
+              <p class="text-sm font-medium leading-tight">Join over 93 Thousand who say - it WORKS!</p>
+            </div>
+            <div class="flex items-center gap-3 my-4">
+              <img src="/assets/blood_13858030_1.png" class="w-13 h-13 object-contain shrink-0" alt="Cycle">
+              <p class="text-sm font-medium leading-tight">Restores your body's natural 24-hour lymphatic cycle
+              </p>
+            </div>
+            <div class="flex items-center gap-3 my-4">
+              <img src="/assets/thigh_1431039_1_a75a1917-7cc8-40dc-923b-d09cece1d6e9.png"
+                class="w-13 h-13 object-contain shrink-0" alt="Body">
+              <p class="text-sm font-medium leading-tight ">Helps reduce fluid retention and the appearance of
+                puffiness and bloating</p>
+            </div>
+            <div class="flex items-center gap-3 my-4">
+              <img src="/assets/smile_3318262_1_1da99ae9-5c63-4339-af75-d35f89cd1cbc.png"
+                class="w-13 h-13 object-contain shrink-0" alt="Sleep">
+              <p class="text-sm font-medium leading-tight">Helps fall asleep faster, stay asleep longer and wake
+                up energized</p>
+            </div>
+            <div class="flex items-center gap-3 my-4">
+              <img src="/assets/blood_13858030_2_78da9178-9f3f-491e-a5f8-b4d69dd5b9cd.png"
+                class="w-13 h-13 object-contain shrink-0" alt="Joints">
+              <p class="text-sm font-medium leading-tight">Eliminates joint stiffness, pain, morning creakiness
+                and feel more grounded</p>
+            </div>
+            <div class="flex items-center gap-3 my-4">
+              <img src="/assets/ecology_18588873_1_dad420da-2490-4e30-828a-28b366974307.png"
+                class="w-13 h-13 object-contain shrink-0" alt="Natural">
+              <p class="text-sm font-medium leading-tight">Boosts energy, mental clarity and emotional balance
+              </p>
             </div>
           </div>
 
-          <!-- Product Selector -->
-          <div class="product_selector-content mt-6">
-            <!-- Option 1: 1 Bottle -->
-            <div
-              class="selector-option group border border-gray-200 rounded-xl p-4 mb-3 cursor-pointer transition-all hover:border-gray-400 bg-white"
-              data-id="1" data-price="$31.96" data-compare="$59.95" data-save="Save $27.99">
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center group-[.active]:bg-black group-[.active]:border-black">
-                    <div class="w-2 h-2 rounded-full bg-white opacity-0 group-[.active]:opacity-100"></div>
-                  </div>
-                  <div>
-                    <p class="font-bold text-lg">1 Bottle</p>
-                    <p class="text-xs text-gray-500">1 bottle total | Save $27.99</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <p class="font-bold text-lg">$31.96</p>
-                  <s class="text-gray-400 text-sm">$59.95</s>
-                </div>
-              </div>
-              <!-- Perks (Hidden by default, shown when active) -->
-              <div class="perks hidden group-[.active]:block mt-3 pt-3 border-t border-gray-100">
-                <div class="flex items-center gap-2 mb-2">
-                  <img src="/assets/icons/delivery-truck.png" width="20" height="20" alt="Free Shipping">
-                  <span class="text-sm font-medium">Free USA Shipping</span>
-                </div>
-              </div>
-            </div>
 
-            <!-- Option 2: Buy 2 Get 1 Free -->
-            <div
-              class="selector-option group active border-2 border-[#108474] rounded-xl p-4 mb-3 cursor-pointer transition-all bg-[#e6f2f0] relative"
-              data-id="2" data-price="$63.92" data-compare="$179.85" data-save="Save $115.93">
-              <div
-                class="absolute -top-3 right-4 bg-[#FF6B6B] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm flex items-center gap-1">
-                <span>♥</span> Valentine's Day Sale
-              </div>
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center group-[.active]:bg-[#108474] group-[.active]:border-[#108474]">
-                    <div class="w-2 h-2 rounded-full bg-white opacity-0 group-[.active]:opacity-100"></div>
-                  </div>
-                  <div>
-                    <p class="font-bold text-lg text-[#108474]">Buy 2 Get 1 Free</p>
-                    <p class="text-xs text-gray-500">3 bottles total | Save $115.93</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <p class="font-bold text-lg text-[#108474]">$63.92</p>
-                  <s class="text-gray-400 text-sm">$179.85</s>
-                </div>
-              </div>
-              <div class="perks hidden group-[.active]:block mt-3 pt-3 border-t border-[#108474]/20">
-                <div class="flex items-center gap-2 mb-2">
-                  <img src="/assets/icons/delivery-truck.png" width="20" height="20" alt="Free Shipping">
-                  <span class="text-sm font-medium text-[#108474]">Free USA Shipping</span>
-                </div>
-                <div class="flex items-center gap-2">
-                  <img src="/assets/icons/ebook.png" width="20" height="20" alt="Free E-book">
-                  <span class="text-sm font-medium text-[#108474]">Free Anti-Bloating Protocol E-book</span>
-                </div>
-              </div>
-            </div>
 
-            <!-- Option 3: Buy 3 Get 2 Free -->
-            <div
-              class="selector-option group border border-gray-200 rounded-xl p-4 mb-3 cursor-pointer transition-all hover:border-[#108474] bg-white"
-              data-id="3" data-price="$95.88" data-compare="$299.75" data-save="Save $203.87">
-              <div class="flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                  <div
-                    class="w-5 h-5 rounded-full border border-gray-300 flex items-center justify-center group-[.active]:bg-[#108474] group-[.active]:border-[#108474]">
-                    <div class="w-2 h-2 rounded-full bg-white opacity-0 group-[.active]:opacity-100"></div>
+
+          <!-- Clinicians' Choice Badge -->
+          <div id="clinicians-badge" class="relative mb-6">
+            <div class="flex items-center gap-3">
+              <!-- Left: Icon with title -->
+              <div class="flex flex-col items-center shrink-0">
+                <div class="flex items-center gap-1 mb-1">
+                  <img src="/assets/point.svg" class="" alt="">
+                  <div class="text-center">
+                    <div class="text-xs font-bold text-gray-800">Clinicians'</div>
+                    <div class="text-xs font-bold text-gray-800">Choice</div>
                   </div>
-                  <div>
-                    <p class="font-bold text-lg group-[.active]:text-[#108474]">Buy 3 Get 2 Free</p>
-                    <p class="text-xs text-gray-500">5 bottles total | Save $203.87</p>
-                  </div>
-                </div>
-                <div class="text-right">
-                  <p class="font-bold text-lg group-[.active]:text-[#108474]">$95.88</p>
-                  <s class="text-gray-400 text-sm">$299.75</s>
+                  <img src="/assets/point2.svg" class="" alt="">
                 </div>
               </div>
-              <div class="perks hidden group-[.active]:block mt-3 pt-3 border-t border-[#108474]/20">
-                <div class="flex items-center gap-2 mb-2">
-                  <img src="/assets/icons/delivery-truck.png" width="20" height="20" alt="Free Shipping">
-                  <span class="text-sm font-medium text-[#108474]">Free USA Shipping</span>
+
+              <!-- Right: Content -->
+              <div>
+                <div>
+                  <p class="text-xs text-gray-700 mb-2 leading-relaxed">
+                    <span class="font-semibold">422 clinicians</span> share this on <span
+                      class="italic">FrontrowMD</span>
+                    <br>
+                    without compensation. <a href="#" class="underline">Learn more</a>
+                  </p>
                 </div>
-                <div class="flex items-center gap-2 mb-2">
-                  <img src="/assets/icons/ebook.png" width="20" height="20" alt="Free E-book">
-                  <span class="text-sm font-medium text-[#108474]">Free Anti-Bloating Protocol E-book</span>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <div class="flex -space-x-2">
+                      <img src="/assets/person1.png" class="w-5 h-5 rounded-full border-2 border-white" alt="Clinician">
+                      <img src="/assets/person2.png" class="w-5 h-5 rounded-full border-2 border-white" alt="Clinician">
+                      <img src="/assets/person3.png" class="w-5 h-5 rounded-full border-2 border-white" alt="Clinician">
+                    </div>
+                    <a href="#" class="font-bold text-xs">Read their reviews</a>
+                  </div>
                 </div>
-                <div class="flex items-center gap-2">
-                  <img src="/assets/icons/gift-card.png" width="20" height="20" alt="Gift Card">
-                  <span class="text-sm font-medium text-[#108474]">$20 Gift Card</span>
-                </div>
+
+
+
+
               </div>
+
+
+              <!-- Avatars and link -->
+
+
+
+              <!-- Close Button -->
+              <button onclick="document.getElementById('clinicians-badge').style.display='none'"
+                class="absolute top-0 right-0 w-4 h-4 bg-gray-300 hover:bg-gray-400 text-gray-600 rounded-full flex items-center justify-center text-sm leading-none transition-colors">
+                ×
+              </button>
             </div>
           </div>
 
-          <!-- Add to Cart Button -->
-          <button
-            class="w-full bg-[#108474] text-white font-bold text-lg py-4 rounded-full mt-4 hover:bg-[#0c665a] transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform uppercase tracking-wide">
-            ADD TO CART - <span id="atc-price">$63.92</span>
-          </button>
 
-          <!-- Trust Badges -->
-          <div class="flex justify-center gap-4 mt-4 text-xs text-gray-500">
-            <span class="flex items-center gap-1">🔒 Secure Payment</span>
-            <span class="flex items-center gap-1">✨ 60-Day Guarantee</span>
-          </div>
         </div>
+
+
+
+
+        <!-- Product Selector -->
+        <div class="product_selector-conten border-2 border-[#f3eee0] bg-[#f3eee0] gap-2 mt-6">
+          <!-- Option 1: 1 Bottle -->
+          <div class="p-3">
+            <div class="border-1 border-[#039869] rounded-xl overflow-hidden">
+              <div class="flex bg-white rounded-lg p-4 gap-2 items-center justify-between">
+                <div>1</div>
+                <div>
+                  <div>1 Botlle</div>
+                  <div>1 bottle total | Save total </div>
+                </div>
+                <div>
+                  <div>$31.96</div>
+                  <div>$51.23</div>
+                </div>
+
+              </div>
+
+              <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
+
+                <div>
+                  <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                </div>
+                <div class="text-white font-semibold">
+                  Free USA Shipping
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+          <!-- Option 2: 2 Bottles -->
+          <div class="p-3">
+            <div class="border-1 border-[#039869] rounded-xl overflow-hidden">
+              <div class="flex bg-white rounded-lg p-4 gap-2 items-center justify-between">
+                <div>1</div>
+                <div>
+                  <div>1 Botlle</div>
+                  <div>1 bottle total | Save total </div>
+                </div>
+                <div>
+                  <div>$31.96</div>
+                  <div>$51.23</div>
+                </div>
+
+              </div>
+              <div class="divide-y divide-white">
+                <div class="py-1 px-2 flex items-center gap-2 bg-[#039869]">
+
+                  <div>
+                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                  </div>
+                  <div class="text-white font-semibold">
+                    Free USA Shipping
+                  </div>
+                </div>
+                <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
+
+                  <div>
+                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                  </div>
+                  <div class="text-white font-semibold">
+                    Free USA Shipping
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Option 3: 3 Bottles -->
+          <div class="p-3">
+            <div class="border-1 border-[#039869] rounded-xl overflow-hidden">
+              <div class="flex bg-white rounded-lg p-4 gap-2 items-center justify-between">
+                <div>1</div>
+                <div>
+                  <div>1 Botlle</div>
+                  <div>1 bottle total | Save total </div>
+                </div>
+                <div>
+                  <div>$31.96</div>
+                  <div>$51.23</div>
+                </div>
+
+              </div>
+              <div class="divide-y divide-white">
+                <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
+
+                  <div>
+                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                  </div>
+                  <div class="text-white font-semibold">
+                    Free USA Shipping
+                  </div>
+                </div>
+                <div class="rounded-b-lg py-1 px-2 flex items-center gap-2 bg-[#039869]">
+
+                  <div>
+                    <img src="/assets/truck.png" alt="" class="w-8 h-8">
+                  </div>
+                  <div class="text-white font-semibold">
+                    Free USA Shipping
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button
+          class="w-full bg-[#108474] text-white font-bold text-lg py-4 rounded-full mt-4 hover:bg-[#0c665a] transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform uppercase tracking-wide">
+          ADD TO CART - <span id="atc-price">$63.92</span>
+        </button>
+
+        <!-- Trust Badges -->
+        <div class="flex justify-center gap-4 mt-4 text-xs text-gray-500">
+          <span class="flex items-center gap-1">🔒 Secure Payment</span>
+          <span class="flex items-center gap-1">✨ 60-Day Guarantee</span>
+        </div>
+      </div>
       </div>
     </section>
   </main>

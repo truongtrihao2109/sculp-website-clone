@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgress();
     }
 
+
     // Reviews Filter Logic (Native Select)
     const filterSelect = document.getElementById('filter-select');
     const filterLabel = document.getElementById('filter-label');
@@ -135,4 +136,74 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
         });
     }
+
+    // Write Review Inline Form Logic
+    // Write Review Inline Form Logic
+    const reviewBtn = document.getElementById('write-review-btn');
+    const reviewFormContainer = document.getElementById('review-form-container');
+    const cancelReviewBtn = document.getElementById('cancel-review');
+
+    if (reviewBtn && reviewFormContainer && cancelReviewBtn) {
+        // Toggle Form
+        reviewBtn.addEventListener('click', () => {
+            const isHidden = reviewFormContainer.classList.contains('hidden');
+            if (isHidden) {
+                reviewFormContainer.classList.remove('hidden');
+                reviewBtn.textContent = 'Cancel review';
+            } else {
+                reviewFormContainer.classList.add('hidden');
+                reviewBtn.textContent = 'Write a review';
+            }
+        });
+
+        // Close Form (Cancel Button)
+        cancelReviewBtn.addEventListener('click', () => {
+            reviewFormContainer.classList.add('hidden');
+            reviewBtn.textContent = 'Write a review';
+        });
+    }
+
+    // File Upload Logic
+    const uploadBox = document.getElementById('review-upload-box');
+    const fileInput = document.getElementById('review-file-input');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    const uploadIcon = document.getElementById('upload-icon');
+
+    if (uploadBox && fileInput && fileNameDisplay && uploadIcon) {
+        // Trigger file input click
+        uploadBox.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Handle file selection
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files && e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                fileNameDisplay.textContent = fileName;
+                fileNameDisplay.classList.remove('hidden');
+                uploadIcon.classList.add('hidden'); // Hide icon to show name clearly
+            } else {
+                fileNameDisplay.textContent = '';
+                fileNameDisplay.classList.add('hidden');
+                uploadIcon.classList.remove('hidden');
+            }
+        });
+    }
+
+    // Star Rating Logic (Visual only)
+    const starButtons = document.querySelectorAll('.star-rating');
+    starButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => {
+            // Reset all
+            starButtons.forEach(b => {
+                b.querySelector('svg').classList.remove('fill-current');
+                b.querySelector('svg').classList.add('fill-transparent');
+            });
+            // Fill up to clicked
+            for (let i = 0; i <= index; i++) {
+                starButtons[i].querySelector('svg').classList.remove('fill-transparent');
+                starButtons[i].querySelector('svg').classList.add('fill-current');
+            }
+        });
+    });
 });

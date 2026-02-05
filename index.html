@@ -1765,7 +1765,7 @@
 
           <!-- Write Review Button -->
           <div class="shrink-0">
-            <button
+            <button id="write-review-btn"
               class="bg-[#ff7d7d] hover:bg-[#ff6666] text-white font-bold py-3 px-8 rounded-sm transition-colors uppercase tracking-wide">
               Write a review
             </button>
@@ -1788,6 +1788,125 @@
       </div>
 
 
+      <!-- Write a Review Form (Inline) -->
+      <div id="review-form-container"
+        class="max-w-5xl mx-auto hidden border-t border-gray-100 mt-8 pt-8 mb-8 transition-all duration-300">
+        <h2 class="text-2xl font-bold text-center mb-2 text-gray-800">Write a review</h2>
+        <p class="text-center text-gray-500 mb-6 font-medium">Rating</p>
+
+        <form id="review-form" class="space-y-6 max-w-2xl mx-auto">
+          <!-- Rating Stars -->
+          <div class="text-center mb-8">
+            <div class="flex justify-center gap-1">
+              <button type="button" class="star-rating group focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Review Content -->
+          <div class="text-center">
+            <label class="block text-gray-700 font-medium mb-2">Review content</label>
+            <textarea rows="5" placeholder="Start writing here..."
+              class="w-full border border-gray-200 rounded-sm p-3 focus:outline-none focus:border-[#ff7d7d] resize-y text-sm"></textarea>
+          </div>
+
+          <!-- Picture/Video -->
+          <div class="text-center">
+            <label class="block text-gray-700 font-medium mb-2">Picture/Video (optional)</label>
+            <input type="file" id="review-file-input" class="hidden" accept="image/*,video/*">
+            <div id="review-upload-box"
+              class="border border-gray-200 rounded-sm p-4 w-32 h-32 mx-auto flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors relative">
+              <svg id="upload-icon" class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+              <span id="file-name-display" class="text-xs text-gray-500 mt-2 text-center break-all hidden"></span>
+            </div>
+          </div>
+
+          <!-- Display Name -->
+          <div class="text-center">
+            <label class="block text-gray-700 font-medium mb-2 flex items-center justify-center gap-2">
+              Display name
+              <span class="text-gray-500 font-normal text-sm flex items-center">
+                (displayed publicly like
+                <select class="text-[#ff7d7d] bg-transparent font-medium focus:outline-none ml-1 cursor-pointer">
+                  <option>John Smith</option>
+                  <option>John S.</option>
+                  <option>John</option>
+                  <option>Anonymous</option>
+                </select>
+                )
+              </span>
+            </label>
+            <input type="text" placeholder="Display name"
+              class="w-full border border-gray-200 rounded-sm p-3 focus:outline-none focus:border-[#ff7d7d] text-sm">
+          </div>
+
+          <!-- Email -->
+          <div class="text-center">
+            <label class="block text-gray-700 font-medium mb-2">Email address</label>
+            <input type="email" placeholder="Your email address"
+              class="w-full border border-gray-200 rounded-sm p-3 focus:outline-none focus:border-[#ff7d7d] text-sm">
+          </div>
+
+          <!-- Footer/Terms -->
+          <p class="text-xs text-center text-gray-500 max-w-lg mx-auto leading-relaxed">
+            How we use your data: We'll only contact you about the review you left, and only if necessary. By submitting
+            your review, you agree to Judge.me's <a href="https://judge.me/terms" target="_blank"
+              rel="noopener noreferrer" class="text-[#ff7d7d] underline">terms</a>, <a href="https://judge.me/privacy"
+              target="_blank" rel="noopener noreferrer" class="text-[#ff7d7d] underline">privacy</a> and <a
+              href="https://judge.me/content-policy" target="_blank" rel="noopener noreferrer"
+              class="text-[#ff7d7d] underline">content</a>
+            policies.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex items-center justify-center gap-4 pt-4">
+            <button type="button" id="cancel-review"
+              class="px-8 py-3 bg-white border border-[#ff7d7d] text-[#ff7d7d] font-bold rounded-sm hover:bg-red-50 transition-colors uppercase w-40">
+              Cancel review
+            </button>
+            <button type="submit"
+              class="px-8 py-3 bg-[#ff7d7d] border border-[#ff7d7d] text-white font-bold rounded-sm hover:bg-[#ff6666] transition-colors uppercase w-40">
+              Submit Review
+            </button>
+          </div>
+        </form>
+      </div>
       <!-- Filter Dropdown -->
       <div class="max-w-5xl mx-auto border-t border-gray-100 pt-8 mb-6">
         <div class="relative w-fit">
@@ -2138,6 +2257,126 @@
       </div>
     </div>
   </footer>
+
+
+  <!-- Write a Review Modal -->
+  <div id="review-modal"
+    class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white rounded-sm shadow-xl w-full max-w-2xl my-8 relative">
+      <div class="p-8">
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">Write a review</h2>
+
+        <form id="review-form" class="space-y-6">
+          <!-- Rating -->
+          <div class="text-center">
+            <label class="block text-gray-700 font-medium mb-2">Rating</label>
+            <div class="flex justify-center gap-1">
+              <button type="button" class="star-rating group focus:outline-none">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+              <button type="button" class="star-rating group focus:outline-none">
+                <svg class="w-8 h-8 text-[#ff7d7d] hover:fill-current fill-transparent stroke-current"
+                  viewBox="0 0 24 24" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Review Content -->
+          <div>
+            <label class="block text-gray-700 font-medium mb-2">Review content</label>
+            <textarea rows="5" placeholder="Start writing here..."
+              class="w-full border border-gray-300 rounded-sm p-3 focus:outline-none focus:border-[#ff7d7d] resize-y"></textarea>
+          </div>
+
+          <!-- Picture/Video -->
+          <div class="text-center">
+            <label class="block text-gray-700 font-medium mb-2">Picture/Video (optional)</label>
+            <div
+              class="border border-gray-300 rounded-sm p-4 w-32 h-32 mx-auto flex items-center justify-center cursor-pointer hover:bg-gray-50">
+              <svg class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Display Name -->
+          <div>
+            <label class="block text-gray-700 font-medium mb-1 flex items-center gap-2">
+              Display name
+              <span class="text-gray-500 font-normal text-sm flex items-center">
+                (displayed publicly like
+                <select class="text-[#ff7d7d] bg-transparent font-medium focus:outline-none ml-1 cursor-pointer">
+                  <option>John Smith</option>
+                  <option>John S.</option>
+                  <option>John</option>
+                  <option>Anonymous</option>
+                </select>
+                )
+              </span>
+            </label>
+            <input type="text" placeholder="Display name"
+              class="w-full border border-gray-300 rounded-sm p-3 focus:outline-none focus:border-[#ff7d7d]">
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-gray-700 font-medium mb-2">Email address</label>
+            <input type="email" placeholder="Your email address"
+              class="w-full border border-gray-300 rounded-sm p-3 focus:outline-none focus:border-[#ff7d7d]">
+          </div>
+
+          <!-- Footer/Terms -->
+          <p class="text-xs text-center text-gray-500">
+            How we use your data: We'll only contact you about the review you left, and only if necessary. By submitting
+            your review, you agree to Judge.me's <a href="#" class="text-[#ff7d7d] hover:underline">terms</a>, <a
+              href="#" class="text-[#ff7d7d] hover:underline">privacy</a> and <a href="#"
+              class="text-[#ff7d7d] hover:underline">content</a> policies.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex items-center justify-center gap-4 pt-4">
+            <button type="button" id="cancel-review"
+              class="px-8 py-3 bg-white border border-[#ff7d7d] text-[#ff7d7d] font-bold rounded-sm hover:bg-red-50 transition-colors uppercase">
+              Cancel review
+            </button>
+            <button type="submit"
+              class="px-8 py-3 bg-[#ff7d7d] border border-[#ff7d7d] text-white font-bold rounded-sm hover:bg-[#ff6666] transition-colors uppercase">
+              Submit Review
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <script type="module" src="./src/main.js"></script>
   <style>

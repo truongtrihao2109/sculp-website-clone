@@ -86,4 +86,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Video Carousel Scroll Logic
+    const videoScroll = document.getElementById('video-scroll');
+    const scrollPrev = document.getElementById('scroll-prev');
+    const scrollNext = document.getElementById('scroll-next');
+    const scrollProgress = document.getElementById('scroll-progress');
+
+    if (videoScroll && scrollPrev && scrollNext && scrollProgress) {
+        const updateProgress = () => {
+            const scrollPercent = (videoScroll.scrollLeft / (videoScroll.scrollWidth - videoScroll.clientWidth)) * 100;
+            scrollProgress.style.width = `${Math.max(10, scrollPercent)}%`;
+        };
+
+        scrollPrev.addEventListener('click', () => {
+            videoScroll.scrollBy({ left: -320, behavior: 'smooth' });
+        });
+
+        scrollNext.addEventListener('click', () => {
+            videoScroll.scrollBy({ left: 320, behavior: 'smooth' });
+        });
+
+        videoScroll.addEventListener('scroll', updateProgress);
+        // Initial progress
+        updateProgress();
+    }
 });

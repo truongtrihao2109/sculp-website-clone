@@ -69,23 +69,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // FAQ Accordion Logic
-    const faqToggles = document.querySelectorAll('.faq-toggle');
-    faqToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const content = toggle.nextElementSibling;
-            const arrow = toggle.querySelector('span:last-child');
+    // Generic Accordion Logic (Reusable)
+    const setupAccordion = (togglesSelector, contentSelector, arrowSelector) => {
+        const toggles = document.querySelectorAll(togglesSelector);
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const arrow = toggle.querySelector(arrowSelector);
 
-            // Toggle visibility
-            content.classList.toggle('hidden');
-
-            // Rotate arrow
-            if (content.classList.contains('hidden')) {
-                arrow.style.transform = 'rotate(0deg)';
-            } else {
-                arrow.style.transform = 'rotate(180deg)';
-            }
+                // Toggle Open/Closed State
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    // Close
+                    content.style.maxHeight = '0px';
+                    arrow.style.transform = 'rotate(0deg)';
+                } else {
+                    // Open
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    arrow.style.transform = 'rotate(180deg)';
+                }
+            });
         });
-    });
+    };
+
+    // Initialize FAQ Accordion
+    setupAccordion('.faq-toggle', '.faq-content', 'span:last-child');
+
+    // Initialize Ingredient Accordion
+    setupAccordion('.ingredient-toggle', '.ingredient-content', 'svg');
 
     // Video Carousel Scroll Logic
     const videoScroll = document.getElementById('video-scroll');
@@ -110,5 +120,19 @@ document.addEventListener('DOMContentLoaded', () => {
         videoScroll.addEventListener('scroll', updateProgress);
         // Initial progress
         updateProgress();
+    }
+
+    // Reviews Filter Logic (Native Select)
+    const filterSelect = document.getElementById('filter-select');
+    const filterLabel = document.getElementById('filter-label');
+
+    if (filterSelect && filterLabel) {
+        filterSelect.addEventListener('change', (e) => {
+            filterLabel.textContent = e.target.value;
+        });
+        // Ensure click works (just in case)
+        filterSelect.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
     }
 });

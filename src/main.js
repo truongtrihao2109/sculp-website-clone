@@ -105,8 +105,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (videoScroll && scrollPrev && scrollNext && scrollProgress) {
         const updateProgress = () => {
-            const scrollPercent = (videoScroll.scrollLeft / (videoScroll.scrollWidth - videoScroll.clientWidth)) * 100;
-            scrollProgress.style.width = `${Math.max(10, scrollPercent)}%`;
+            const totalVideos = videoScroll.children.length;
+            const visibleVideos = Math.round(videoScroll.clientWidth / videoScroll.children[0].clientWidth);
+            const scrollableWidth = videoScroll.scrollWidth - videoScroll.clientWidth;
+            const currentScroll = videoScroll.scrollLeft;
+
+            // Tính số "trang" hoặc view khác nhau
+            // Với 8 video và 4 video hiển thị, có 5 trang: (1-4), (2-5), (3-6), (4-7), (5-8)
+            const numPages = totalVideos - visibleVideos + 1; // Số trang khác nhau
+            const pagePercentage = 100 / numPages; // Mỗi trang = 20% (100% / 5 = 20%)
+
+            if (scrollableWidth <= 0) {
+                // Nếu không thể scroll, hiển thị 20% (trang đầu tiên)
+                scrollProgress.style.width = `${pagePercentage}%`;
+                return;
+            }
+
+            // Tính trang hiện tại dựa trên scroll position
+            const videoCardWidth = videoScroll.children[0].clientWidth + 16; // width + gap
+            const currentVideoIndex = Math.round(currentScroll / videoCardWidth);
+
+            // Progress = (trang hiện tại + 1) * 20%
+            // Trang 0 (đầu tiên) = 20%, trang 1 = 40%, ..., trang 4 = 100%
+            const progressPercentage = Math.min(100, (currentVideoIndex + 1) * pagePercentage);
+            scrollProgress.style.width = `${progressPercentage}%`;
         };
 
         scrollPrev.addEventListener('click', () => {

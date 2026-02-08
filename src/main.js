@@ -260,4 +260,94 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Nutritional Information Modal Logic
+    const nutritionBtn = document.getElementById('nutrition-info-btn');
+    const nutritionBtnMobile = document.getElementById('nutrition-info-btn-mobile');
+    const nutritionModal = document.getElementById('nutrition-modal');
+    const nutritionCloseBtn = document.getElementById('nutrition-close-btn');
+
+    const getScrollbarWidth = () => {
+        // Create a temporary div to measure scrollbar width
+        const outer = document.createElement('div');
+        outer.style.visibility = 'hidden';
+        outer.style.overflow = 'scroll';
+        outer.style.msOverflowStyle = 'scrollbar';
+        document.body.appendChild(outer);
+        
+        const inner = document.createElement('div');
+        outer.appendChild(inner);
+        
+        const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+        outer.parentNode.removeChild(outer);
+        
+        return scrollbarWidth;
+    };
+
+    const openNutritionModal = () => {
+        // Calculate scrollbar width before hiding it
+        const scrollbarWidth = getScrollbarWidth();
+        const bodyPaddingRight = window.getComputedStyle(document.body).paddingRight;
+        const bodyPaddingRightNum = parseInt(bodyPaddingRight) || 0;
+        
+        // Store original padding
+        document.body.dataset.originalPaddingRight = bodyPaddingRight;
+        
+        // Prevent background scroll and compensate for scrollbar
+        document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${bodyPaddingRightNum + scrollbarWidth}px`;
+        
+        // Also apply to fixed elements if needed
+        const fixedElements = document.querySelectorAll('header, .fixed, .sticky');
+        fixedElements.forEach(el => {
+            const elPaddingRight = window.getComputedStyle(el).paddingRight;
+            const elPaddingRightNum = parseInt(elPaddingRight) || 0;
+            el.dataset.originalPaddingRight = elPaddingRight;
+            el.style.paddingRight = `${elPaddingRightNum + scrollbarWidth}px`;
+        });
+        
+        nutritionModal.classList.remove('hidden');
+    };
+
+    const closeNutritionModal = () => {
+        nutritionModal.classList.add('hidden');
+        
+        // Restore scroll and padding
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = document.body.dataset.originalPaddingRight || '';
+        delete document.body.dataset.originalPaddingRight;
+        
+        // Restore fixed elements padding
+        const fixedElements = document.querySelectorAll('header, .fixed, .sticky');
+        fixedElements.forEach(el => {
+            if (el.dataset.originalPaddingRight !== undefined) {
+                el.style.paddingRight = el.dataset.originalPaddingRight;
+                delete el.dataset.originalPaddingRight;
+            }
+        });
+    };
+
+    if (nutritionBtn && nutritionModal) {
+        // Open modal (Desktop)
+        nutritionBtn.addEventListener('click', openNutritionModal);
+    }
+
+    if (nutritionBtnMobile && nutritionModal) {
+        // Open modal (Mobile)
+        nutritionBtnMobile.addEventListener('click', openNutritionModal);
+    }
+
+    if (nutritionCloseBtn && nutritionModal) {
+        // Close modal
+        nutritionCloseBtn.addEventListener('click', closeNutritionModal);
+    }
+
+    // Close modal when clicking outside (on the overlay)
+    if (nutritionModal) {
+        nutritionModal.addEventListener('click', (e) => {
+            if (e.target === nutritionModal) {
+                closeNutritionModal();
+            }
+        });
+    }
 });

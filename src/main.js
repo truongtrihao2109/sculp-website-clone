@@ -122,6 +122,38 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProgress();
     }
 
+    // Video Play/Pause Logic
+    const videoContainers = document.querySelectorAll('.product_ugc-video');
+    videoContainers.forEach(container => {
+        const video = container.querySelector('video');
+        const playIcon = container.querySelector('.product_ugc-play');
+
+        if (video && playIcon) {
+            // Click on play icon or video to play/pause
+            const handleClick = () => {
+                if (video.paused) {
+                    // Play video with sound
+                    video.muted = false;
+                    video.play();
+                    playIcon.style.display = 'none';
+                } else {
+                    // Pause video
+                    video.pause();
+                    playIcon.style.display = 'block';
+                }
+            };
+
+            playIcon.addEventListener('click', handleClick);
+            video.addEventListener('click', handleClick);
+
+            // Show play icon when video ends
+            video.addEventListener('ended', () => {
+                playIcon.style.display = 'block';
+            });
+        }
+    });
+
+
 
     // Reviews Filter Logic (Native Select)
     const filterSelect = document.getElementById('filter-select');

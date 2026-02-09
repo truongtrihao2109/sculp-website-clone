@@ -14,15 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     innerDiv.classList.add('border-gray-200');
                 }
                 // Reset radio button
-                const radioOuter = opt.querySelector('.w-8.h-8.rounded-full');
-                const radioInner = radioOuter?.querySelector('.w-4.h-4.rounded-full');
-                if (radioOuter) {
-                    radioOuter.classList.remove('border-[#039869]');
-                    radioOuter.classList.add('border-gray-300');
-                }
-                if (radioInner) {
-                    radioInner.classList.remove('bg-[#039869]');
-                    radioInner.classList.add('bg-transparent');
+                const flexContainer = opt.querySelector('.flex.items-center');
+                if (flexContainer) {
+                    const radioOuter = flexContainer.querySelector('div.rounded-full.shrink-0');
+                    const radioInner = radioOuter?.querySelector('div.rounded-full');
+                    if (radioOuter) {
+                        radioOuter.classList.remove('border-[#039869]');
+                        radioOuter.classList.add('border-gray-300');
+                    }
+                    if (radioInner) {
+                        radioInner.classList.remove('bg-[#039869]');
+                        radioInner.classList.add('bg-transparent');
+                    }
                 }
 
                 // Reset perk colors to inactive state
@@ -42,15 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 innerDiv.classList.add('border-[#039869]');
             }
             // Set radio button to active
-            const radioOuter = option.querySelector('.w-8.h-8.rounded-full');
-            const radioInner = radioOuter?.querySelector('.w-4.h-4.rounded-full');
-            if (radioOuter) {
-                radioOuter.classList.remove('border-gray-300');
-                radioOuter.classList.add('border-[#039869]');
-            }
-            if (radioInner) {
-                radioInner.classList.remove('bg-transparent');
-                radioInner.classList.add('bg-[#039869]');
+            const flexContainer = option.querySelector('.flex.items-center');
+            if (flexContainer) {
+                const radioOuter = flexContainer.querySelector('div.rounded-full.shrink-0');
+                const radioInner = radioOuter?.querySelector('div.rounded-full');
+                if (radioOuter) {
+                    radioOuter.classList.remove('border-gray-300');
+                    radioOuter.classList.add('border-[#039869]');
+                }
+                if (radioInner) {
+                    radioInner.classList.remove('bg-transparent');
+                    radioInner.classList.add('bg-[#039869]');
+                }
             }
 
             // Set perk colors for selected state (all dark green)

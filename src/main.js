@@ -97,6 +97,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Ingredient Accordion
     setupAccordion('.ingredient-toggle', '.ingredient-content', 'svg');
 
+    // Initialize Product Tab Blocks Accordion
+    const productTabThumbs = document.querySelectorAll('.product_tab-thumb');
+    productTabThumbs.forEach(thumb => {
+        thumb.addEventListener('click', () => {
+            const tabBlock = thumb.closest('.product_tab-block');
+            const content = thumb.nextElementSibling;
+            const icon = thumb.querySelector('img');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                // Close
+                content.style.maxHeight = '0px';
+                tabBlock.classList.remove('active');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            } else {
+                // Close other open tabs
+                document.querySelectorAll('.product_tab-block').forEach(block => {
+                    if (block !== tabBlock) {
+                        const otherContent = block.querySelector('.product_tab-content');
+                        const otherIcon = block.querySelector('.product_tab-thumb img');
+                        if (otherContent) {
+                            otherContent.style.maxHeight = '0px';
+                        }
+                        if (otherIcon) {
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                        block.classList.remove('active');
+                    }
+                });
+                
+                // Open
+                content.style.maxHeight = content.scrollHeight + 'px';
+                tabBlock.classList.add('active');
+                if (icon) {
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            }
+        });
+    });
+
     // Video Carousel Scroll Logic
     const videoScroll = document.getElementById('video-scroll');
     const scrollPrev = document.getElementById('scroll-prev');
@@ -131,12 +172,32 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollProgress.style.width = `${progressPercentage}%`;
         };
 
+        // Tính khoảng scroll đúng bằng 1 card + gap để luôn canh đủ 4 video
+        const getScrollAmount = () => {
+            const firstCard = videoScroll.querySelector('.video-card');
+            if (!firstCard) return 0;
+
+            const cardWidth = firstCard.getBoundingClientRect().width;
+            const scrollStyles = window.getComputedStyle(videoScroll);
+            const gapValue = scrollStyles.columnGap || scrollStyles.gap || '0';
+            const gap = parseFloat(gapValue) || 0;
+
+            return cardWidth + gap;
+        };
+
+        let scrollAmount = getScrollAmount();
+
+        // Cập nhật lại khi resize để giữ đúng 4 video trên desktop
+        window.addEventListener('resize', () => {
+            scrollAmount = getScrollAmount();
+        });
+
         scrollPrev.addEventListener('click', () => {
-            videoScroll.scrollBy({ left: -320, behavior: 'smooth' });
+            videoScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
         });
 
         scrollNext.addEventListener('click', () => {
-            videoScroll.scrollBy({ left: 320, behavior: 'smooth' });
+            videoScroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         });
 
         videoScroll.addEventListener('scroll', updateProgress);
@@ -349,5 +410,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeNutritionModal();
             }
         });
+    }
+
+    // Logo Marquee - Clone slide for seamless infinite loop
+    const logosSlide = document.querySelector('.logos-slide');
+    const logos = document.querySelector('.logos');
+    if (logosSlide && logos) {
+        const copy = logosSlide.cloneNode(true);
+        logos.appendChild(copy);
     }
 });

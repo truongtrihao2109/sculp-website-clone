@@ -100,8 +100,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize FAQ Accordion
     setupAccordion('.faq-toggle', '.faq-content', 'span:last-child');
 
-    // Initialize Ingredient Accordion
-    setupAccordion('.ingredient-toggle', '.ingredient-content', 'svg');
+    // Initialize Ingredient Accordion (custom logic for ingredient cards)
+    const ingredientToggles = document.querySelectorAll('.ingredient-toggle');
+    ingredientToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            // Find the ingredient-content within the same ingredient-card
+            const ingredientCard = toggle.closest('.ingredient-card');
+            const content = ingredientCard?.querySelector('.ingredient-content');
+            const arrow = toggle.querySelector('svg');
+
+            if (!content) return;
+
+            // Toggle Open/Closed State
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                // Close
+                content.style.maxHeight = '0px';
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            } else {
+                // Open
+                content.style.maxHeight = content.scrollHeight + 'px';
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
+            }
+        });
+    });
 
     // Initialize Product Tab Blocks Accordion
     const productTabThumbs = document.querySelectorAll('.product_tab-thumb');

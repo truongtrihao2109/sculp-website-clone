@@ -262,15 +262,160 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reviews Filter Logic (Native Select)
     const filterSelect = document.getElementById('filter-select');
     const filterLabel = document.getElementById('filter-label');
+    const reviewsListEl = document.getElementById('reviews-list');
+
+    // Mock review data for filtering
+    const reviewsData = [
+        {
+            id: 1,
+            author: 'Erika Wasielewski',
+            rating: 4,
+            verified: true,
+            date: '2025-10-15',
+            content: 'So far I’ve noticed less swelling in my feet by the end of the day. Haven’t noticed any cellulite repair yet and still have heaviness but not as much.',
+            helpful: 32,
+            hasPhoto: false,
+            hasVideo: false
+        },
+        {
+            id: 2,
+            author: 'Tonia Robbins',
+            rating: 4,
+            verified: true,
+            date: '2025-09-17',
+            content: 'Am seeing results the first 30 days.',
+            helpful: 18,
+            hasPhoto: true,
+            hasVideo: false
+        },
+        {
+            id: 3,
+            author: 'Phyllis Thompson',
+            rating: 4,
+            verified: true,
+            date: '2025-09-08',
+            content: 'Been taking Sculptique for almost thirty days now. Have noticed maybe a slight difference in appearance of skin. Will continue taking the product and see what happens.',
+            helpful: 11,
+            hasPhoto: false,
+            hasVideo: true
+        },
+        {
+            id: 4,
+            author: 'Crystal',
+            rating: 4,
+            verified: true,
+            date: '2025-09-03',
+            content: 'So far, so good! I can definitely see a slight difference. While the results aren’t as dramatic as I initially hoped, this is the first product that has delivered noticeable improvements after all the money and effort I’ve spent on others.',
+            helpful: 25,
+            hasPhoto: true,
+            hasVideo: true
+        },
+        {
+            id: 5,
+            author: 'MEG Tupp',
+            rating: 4,
+            verified: true,
+            date: '2025-08-28',
+            content: 'I see a small difference in the appearance of my cellulite. I am not sure if I have plateaued or if I continue taking that it will keep appearing better.',
+            helpful: 7,
+            hasPhoto: false,
+            hasVideo: false
+        }
+    ];
+
+    const formatReviewDate = (isoString) => {
+        const d = new Date(isoString);
+        if (Number.isNaN(d.getTime())) return isoString;
+        const month = String(d.getMonth() + 1).padStart(2, '0');
+        const day = String(d.getDate()).padStart(2, '0');
+        const year = d.getFullYear();
+        return `${month}/${day}/${year}`;
+    };
+
+    const renderStars = (rating) => {
+        const fullStar = '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>';
+        const emptyStar = '<svg class="w-4 h-4 fill-gray-300" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>';
+        let html = '';
+        for (let i = 0; i < 5; i += 1) {
+            html += i < rating ? fullStar : emptyStar;
+        }
+        return html;
+    };
+
+    const buildReviewHtml = (review) => `
+        <div class="border-t border-gray-100 pt-8">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex text-[#ff7373]">
+              ${renderStars(review.rating)}
+            </div>
+            <div class="text-xs text-gray-400">${formatReviewDate(review.date)}</div>
+          </div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-500">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+            <div class="flex justify-center items-center gap-2">
+              <span class="text-[#ff7373] text-sm block">${review.author}</span>
+              ${review.verified ? '<span class="text-[10px] text-white bg-[#ff7373] px-1 tracking-wide">Verified</span>' : ''}
+            </div>
+          </div>
+          <div class="text-gray-700 text-sm leading-relaxed">
+            <p>${review.content}</p>
+          </div>
+        </div>
+    `;
+
+    const renderReviews = (items) => {
+        if (!reviewsListEl) return;
+        reviewsListEl.innerHTML = items.map(buildReviewHtml).join('');
+    };
+
+    const getFilteredReviews = (filterValue) => {
+        const data = [...reviewsData];
+        const byDateDesc = (a, b) => new Date(b.date) - new Date(a.date);
+
+        switch (filterValue) {
+            case 'Most Recent':
+                return data.sort(byDateDesc);
+            case 'Highest Rating':
+                return data.sort((a, b) => (b.rating - a.rating) || byDateDesc(a, b));
+            case 'Lowest Rating':
+                return data.sort((a, b) => (a.rating - b.rating) || byDateDesc(a, b));
+            case 'Only Pictures':
+                return data.filter((r) => r.hasPhoto).sort(byDateDesc);
+            case 'Pictures First':
+                return data.sort((a, b) => (Number(b.hasPhoto) - Number(a.hasPhoto)) || byDateDesc(a, b));
+            case 'Videos First':
+                return data.sort((a, b) => (Number(b.hasVideo) - Number(a.hasVideo)) || byDateDesc(a, b));
+            case 'Most Helpful':
+            default:
+                return data.sort((a, b) => (b.helpful - a.helpful) || byDateDesc(a, b));
+        }
+    };
+
+    const applyReviewFilter = (filterValue) => {
+        const items = getFilteredReviews(filterValue || 'Most Helpful');
+        renderReviews(items);
+    };
 
     if (filterSelect && filterLabel) {
+        // Initial render
+        applyReviewFilter(filterSelect.value);
+
         filterSelect.addEventListener('change', (e) => {
-            filterLabel.textContent = e.target.value;
+            const value = e.target.value;
+            filterLabel.textContent = value;
+            applyReviewFilter(value);
         });
         // Ensure click works (just in case)
         filterSelect.addEventListener('click', (e) => {
             e.stopPropagation();
         });
+    } else if (reviewsListEl) {
+        // Fallback: render default ordering if filter UI is missing
+        applyReviewFilter('Most Helpful');
     }
 
     // Write Review Inline Form Logic

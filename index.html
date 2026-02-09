@@ -2614,7 +2614,7 @@
       </div>
       <div class="fr-modal-content">
         <div class="fr-question-section">
-          <details class="fr-accordion" ontoggle="toggleDetails(event)" open>
+          <details class="fr-accordion" ontoggle="toggleDetails(event)">
             <summary class="fr-accordion-content">
               <p class="fr-question-title">Who is FrontrowMD?</p>
               <span class="fr-expand-plus">
@@ -2933,7 +2933,7 @@
       justify-content: center;
     }
 
-    .fr-back-icon,
+
     .fr-close-icon {
       border: none;
       background: transparent;
@@ -2942,6 +2942,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 15px;
+      border-radius: 999px;
+      box-sizing: border-box;
+    }
+
+
+    .fr-close-icon:hover {
+      background-color: #EEEEEE;
+    }
+    .fr-back-icon:hover{
+      background-color: #EEEEEE;
+      border-radius: 999px;
     }
 
     .fr-logo {
@@ -3110,7 +3122,8 @@
       color: #777;
     }
 
-    body.fr-modal-open {
+    body.fr-modal-open,
+    html.fr-modal-open {
       overflow: hidden;
     }
 

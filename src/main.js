@@ -447,13 +447,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const openFrontrowModalInternal = () => {
         if (!frontrowOverlay) return;
         frontrowOverlay.classList.remove('hidden');
-        document.body.classList.add('fr-modal-open');
+        // Giữ nguyên scroll ngoài trang (không khóa body/html)
     };
 
     const closeFrontrowModalInternal = () => {
         if (!frontrowOverlay) return;
         frontrowOverlay.classList.add('hidden');
-        document.body.classList.remove('fr-modal-open');
     };
 
     if (frontrowOverlay) {

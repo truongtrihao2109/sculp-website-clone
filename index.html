@@ -1799,13 +1799,33 @@
             </div>
           </div>
 
-          <!-- Pagination -->
-          <div class="flex justify-center mt-12 gap-2 text-sm font-bold text-gray-400">
-            <span class="text-black cursor-pointer">1</span>
-            <span class="hover:text-black cursor-pointer">2</span>
-            <span class="hover:text-black cursor-pointer">3</span>
-            <span class="hover:text-black cursor-pointer">›</span>
-            <span class="hover:text-black cursor-pointer">»</span>
+          <!-- Pagination (Judge.me-like minimal style) -->
+          <div class="jdgm-paginate flex justify-center items-baseline mt-12 text-sm font-bold text-[#ff7373]"
+            data-per-page="5" data-url="https://api.judge.me/reviews/reviews_for_widget">
+            <!-- Current page (active - larger) -->
+            <a class="jdgm-paginate__page jdgm-curt py-1 px-2 text-base text-gray-700 cursor-pointer"
+              data-page="1" aria-label="Page 1" tabindex="0" role="button">
+              1
+            </a>
+            <!-- Other pages -->
+            <a class="jdgm-paginate__page py-1 px-2 text-[#ffaaa0] hover:text-[#ff7373] cursor-pointer"
+              data-page="2" aria-label="Page 2" tabindex="0" role="button">
+              2
+            </a>
+            <a class="jdgm-paginate__page py-1 px-2 text-[#ffaaa0] hover:text-[#ff7373] cursor-pointer"
+              data-page="3" aria-label="Page 3" tabindex="0" role="button">
+              3
+            </a>
+            <!-- Next page -->
+            <a class="jdgm-paginate__page jdgm-paginate__next-page py-1 px-2 text-[#ffaaa0] hover:text-[#ff7373] cursor-pointer"
+              data-page="2" aria-label="Next page" tabindex="0" rel="next" role="button">
+              ›
+            </a>
+            <!-- Last page -->
+            <a class="jdgm-paginate__page jdgm-paginate__last-page py-1 px-2 text-[#ffaaa0] hover:text-[#ff7373] cursor-pointer"
+              data-page="23" aria-label="Last page" tabindex="0" role="button">
+              »
+            </a>
           </div>
         </div>
       </div>
@@ -1908,13 +1928,12 @@
   <section class="bg-[#f3eee0] py-14 overflow-hidden">
   <div class="box-border max-w-[1340px] mx-auto px-4 sm:px-[50px]">
       <!-- Social Proof Header -->
-      <div class="text-center mb-12">
+      <div class="text-center mb-4">
         <div class="flex flex-col items-center gap-2 mb-4">
           <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Trustpilot_review_2.png?v=1752485383"
-            alt="Trustpilot Rating" class="h-8 w-auto">
-          <p class="text-[10px] tracking-widest text-gray-500 uppercase font-bold">93,000+ Customers Worldwide</p>
+            alt="Trustpilot Rating" class="h-11 w-auto">
         </div>
-        <h2 class="font-serif text-2xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <h2 class="font-['Lora'] text-[32px] sm:text-[32px] md:text-[32px] leading-tight">
           See The Stories of Sculptique™ Women Firsthand
         </h2>
       </div>
@@ -1924,7 +1943,7 @@
         <div class="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-8" id="video-scroll">
           <!-- Video Card 1 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -1937,7 +1956,7 @@
           </div>
           <!-- Video Card 2 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -1950,7 +1969,7 @@
           </div>
           <!-- Video Card 3 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -1963,7 +1982,7 @@
           </div>
           <!-- Video Card 4 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -1976,7 +1995,7 @@
           </div>
           <!-- Video Card 5 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -1989,7 +2008,7 @@
           </div>
           <!-- Video Card 6 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -2002,7 +2021,7 @@
           </div>
           <!-- Video Card 7 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -2015,7 +2034,7 @@
           </div>
           <!-- Video Card 8 -->
           <div
-            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-2xl overflow-hidden relative snap-start shadow-lg">
+            class="video-card min-w-[280px] sm:min-w-[320px] aspect-[9/16] rounded-md overflow-hidden relative snap-start shadow-lg">
             <div class="product_ugc-video">
               <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/mingcute_play-fill.png?v=1752485519"
                 class="product_ugc-play" alt="Play">
@@ -2053,13 +2072,13 @@
       <!-- Final CTA -->
       <div class="flex flex-col items-center mt-16">
         <button
-          class="bg-black hover:bg-gray-800 text-white font-['Nunito'] text-xl sm:text-2xl py-[18px] px-12 sm:px-20 rounded-md transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform tracking-wide tracking-widest text-center">
+          class="bg-black hover:bg-gray-800 text-white font-['Nunito'] text-lg sm:text-lg py-[18px] px-12 sm:px-20 rounded-md transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform tracking-wide tracking-widest text-center">
           Try Lymphatic Drainage Risk-Free
         </button>
         <div class="flex items-center mt-4 gap-3">
           <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
-            class="w-10 h-10 object-contain" alt="60-day guarantee">
-          <p class="text-gray-600 font-bold text-sm sm:text-base">60-Day Money-Back Guarantee</p>
+            class="w-6 h-6 object-contain" alt="60-day guarantee">
+          <p class="font-['Nunito'] text-[16px]">60-Day Money-Back Guarantee</p>
         </div>
       </div>
     </div>
@@ -2073,7 +2092,7 @@
       <h2 class="font-['Lora'] text-[32px] md:text-[32px] mb-12 text-center text-[#121212]">Frequently Asked Questions
       </h2>
 
-      <div class="space-y-4 p-6 rounded-2xl" style="background: linear-gradient(180deg, #fff, #f3eee0);">
+      <div class="p-6 rounded-2xl" style="background: linear-gradient(180deg, #fff, #f3eee0);">
         <!-- FAQ Item 1 -->
         <div class="faq-item border-b border-white">
           <button
@@ -2301,15 +2320,15 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-center mt-16">
+      <div class="flex flex-col items-center mt-6">
         <button
-          class="bg-black hover:bg-gray-800 text-white font-['Nunito'] text-xl sm:text-2xl py-[18px] px-12 sm:px-20 rounded-md transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform tracking-wide tracking-widest text-center">
-          Try Lymphatic Drainage Risk-Free
+          class="bg-black hover:bg-gray-800 text-white font-['Nunito'] text-lg sm:text-lg py-[18px] px-12 sm:px-20 rounded-md transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-[0.98] transform tracking-wide tracking-widest text-center">
+          Try Lymphatic Drainage Risk-Free 
         </button>
         <div class="flex items-center mt-4 gap-3">
           <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/60-days_11622780_1_1.png?v=1752388395"
             class="w-10 h-10 object-contain" alt="60-day guarantee">
-          <p class="text-gray-600 font-bold text-sm sm:text-base">60-Day Money-Back Guarantee</p>
+          <p class=" font-['Nunito'] text-[16px]">60-Day Money-Back Guarantee</p>
         </div>
       </div>
 

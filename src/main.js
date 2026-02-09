@@ -810,8 +810,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.toggleDetails = (event) => {
-        // Optional hook – we rely mostly on CSS for plus/minus icons
-        // but keep this to avoid JS errors and for future analytics if needed.
+        // Optional hook for future analytics if needed
         if (!event) return;
     };
 

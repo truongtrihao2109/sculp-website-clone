@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/assets/fav.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/misc/fav.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sculptique</title>
   <!-- Google Fonts -->
@@ -22,15 +22,19 @@
     Skip to content
   </a>
 
-  <!--- Header -->
+  <!-- ============================================ -->
+  <!-- HEADER SECTION -->
+  <!-- ============================================ -->
+  <header>
+    <div class="max-w-[1340px] box-border mx-auto py-3 px-4 sm:px-[50px]">
+      <img src="/assets/logos/logo.png" alt="Sculptique" class="mx-auto block max-w-[140px] md:max-w-[160px] h-auto" />
+    </div>
+  </header>
 
-  <div class="max-w-[1340px] box-border mx-auto py-3 px-4 sm:px-[50px]">
-    <img src="/assets/logo.png" alt="Sculptique" class="mx-auto block max-w-[140px] md:max-w-[160px] h-auto" />
-  </div>
-
-
-
-  <main id="main-content bg-white">
+  <!-- ============================================ -->
+  <!-- MAIN CONTENT: PRODUCT PAGE -->
+  <!-- ============================================ -->
+  <main id="main-content" class="bg-white">
     <section class="max-w-[1340px] box-border mx-auto py-8 px-4 sm:px-[50px]">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
 
@@ -41,11 +45,11 @@
           <div class="hidden md:grid grid-cols-3 gap-4">
             <!-- Image 1: Full width with Nutritional Info button -->
             <div class="col-span-3 relative">
-              <img src="/assets/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
+              <img src="/assets/product-images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
                 alt="Sculptique Lymphatic Drainage Capsules" class="w-full h-auto rounded-md">
               <!-- Valentine's Day Sale Badge -->
               <div class="absolute top-4 right-4 z-[3] flex items-center justify-center">
-                <img src="/assets/valentine.avif" alt="Valentine's Day Sale" class="w-[100px] h-auto   object-contain">
+                <img src="/assets/badges/valentine.avif" alt="Valentine's Day Sale" class="w-[100px] h-auto object-contain">
               </div>
               <!-- Nutritional Information Button -->
               <div id="nutrition-info-btn"
@@ -64,36 +68,36 @@
             <!-- Images 2 & 3: Two columns (span 1.5 each to fill 3-column grid) -->
             <div class="col-span-3 grid grid-cols-2 gap-4">
               <div>
-                <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
                   class="w-full h-auto rounded-none">
               </div>
               <div>
-                <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
                   class="w-full h-auto rounded-none">
               </div>
             </div>
 
             <!-- Images 4, 5 & 6: Three columns -->
             <div class="col-span-1">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
                 class="w-full h-auto rounded-none">
             </div>
             <div class="col-span-1">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
                 class="w-full h-auto rounded-none">
             </div>
             <div class="col-span-1">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
                 class="w-full h-auto rounded-none">
             </div>
 
             <!-- Images 7, 8: Two columns -->
             <div class="col-span-3 grid grid-cols-2 gap-4">
-              <div class="">
-                <img src="/assets/tiredness-min.png" loading="lazy" class="w-full h-auto rounded-none">
+              <div>
+                <img src="/assets/symptoms/tiredness-min.png" loading="lazy" class="w-full h-auto rounded-none">
               </div>
-              <div class="">
-                <img src="/assets/puffiness-min.png" loading="lazy" class="w-full h-auto rounded-none">
+              <div>
+                <img src="/assets/symptoms/puffiness-min.png" loading="lazy" class="w-full h-auto rounded-none">
               </div>
             </div>
           </div>
@@ -101,11 +105,11 @@
           <!-- Mobile: Scroll-Snap Carousel -->
           <div class="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 p-4 scrollbar-hide">
             <div class="snap-center shrink-0 w-[85vw] relative">
-              <img src="/assets/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
+              <img src="/assets/product-images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
                 alt="Sculptique Capsules" class="w-full h-auto rounded-lg shadow-sm">
               <!-- Valentine's Day Sale Badge (Mobile) -->
               <div class="absolute top-4 right-4 z-[3] flex items-center justify-center">
-                <img src="/assets/valentine.avif" alt="Valentine's Day Sale" class="w-auto h-auto max-w-[120px] object-contain">
+                <img src="/assets/badges/valentine.avif" alt="Valentine's Day Sale" class="w-auto h-auto max-w-[120px] object-contain">
               </div>
               <!-- Nutritional Information Button (Mobile) -->
               <div id="nutrition-info-btn-mobile"
@@ -121,23 +125,23 @@
               </div>
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
                 class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
                 class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
                 class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
                 class="w-full h-auto rounded-lg shadow-sm">
             </div>
             <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
+              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
                 class="w-full h-auto rounded-lg shadow-sm">
             </div>
           </div>
@@ -149,7 +153,7 @@
 
             <div class="flex leading-[1.4] items-center space-x-4">
               <div class="flex items-center">
-                <img src="/assets/five_stars.png" alt="5 Stars" class="h-[18px] w-auto object-contain">
+                <img src="/assets/badges/five_stars.png" alt="5 Stars" class="h-[18px] w-auto object-contain">
               </div>
               <span class="text-[16px] font-[Nunito]">4.8/5
                 Excellent | Based on 2381 Reviews</span>
@@ -160,55 +164,49 @@
             New Maximum Potency Formula - Lymphatic Drainage Capsules by Sculptique™
           </h1>
 
-
-
           <!-- Benefits List with Icons -->
           <div class="grid grid-cols-1 ">
             <div class="flex items-center gap-3 my-4">
-              <img src="/assets/population_12285628_1_e864791e-7a6d-4f08-9aea-3aeffba37cc7.png"
+              <img src="/assets/benefits/population_12285628_1_e864791e-7a6d-4f08-9aea-3aeffba37cc7.png"
                 class="w-13 h-13 object-contain shrink-0" alt="People">
               <p class="font-['Nunito'] text-[16px] font-medium leading-tight">Join over 93 Thousand who say - it WORKS!
               </p>
             </div>
             <div class="flex items-center gap-3 mb-4">
-              <img src="/assets/blood_13858030_1.png" class="w-13 h-13 object-contain shrink-0" alt="Cycle">
+              <img src="/assets/benefits/blood_13858030_1.png" class="w-13 h-13 object-contain shrink-0" alt="Cycle">
               <p class="font-['Nunito'] text-[16px] font-medium leading-tight">Restores your body's natural 24-hour
                 lymphatic cycle
               </p>
             </div>
             <div class="flex items-center gap-3 mb-4">
-              <img src="/assets/thigh_1431039_1_a75a1917-7cc8-40dc-923b-d09cece1d6e9.png"
+              <img src="/assets/benefits/thigh_1431039_1_a75a1917-7cc8-40dc-923b-d09cece1d6e9.png"
                 class="w-13 h-13 object-contain shrink-0" alt="Body">
               <p class="font-['Nunito'] text-[16px] font-medium leading-tight ">Helps reduce fluid retention and the
                 appearance of
                 puffiness and bloating</p>
             </div>
             <div class="flex items-center gap-3 mb-4">
-              <img src="/assets/smile_3318262_1_1da99ae9-5c63-4339-af75-d35f89cd1cbc.png"
+              <img src="/assets/benefits/smile_3318262_1_1da99ae9-5c63-4339-af75-d35f89cd1cbc.png"
                 class="w-13 h-13 object-contain shrink-0" alt="Sleep">
               <p class="font-['Nunito'] text-[16px] font-medium leading-tight">Helps fall asleep faster, stay asleep
                 longer and wake
                 up energized</p>
             </div>
             <div class="flex items-center gap-3 mb-4">
-              <img src="/assets/blood_13858030_2_78da9178-9f3f-491e-a5f8-b4d69dd5b9cd.png"
+              <img src="/assets/benefits/blood_13858030_2_78da9178-9f3f-491e-a5f8-b4d69dd5b9cd.png"
                 class="w-13 h-13 object-contain shrink-0" alt="Joints">
               <p class="font-['Nunito'] text-[16px] font-medium leading-tight">Eliminates joint stiffness, pain, morning
                 creakiness
                 and feel more grounded</p>
             </div>
             <div class="flex items-center gap-3 mb-4">
-              <img src="/assets/ecology_18588873_1_dad420da-2490-4e30-828a-28b366974307.png"
+              <img src="/assets/benefits/ecology_18588873_1_dad420da-2490-4e30-828a-28b366974307.png"
                 class="w-13 h-13 object-contain shrink-0" alt="Natural">
               <p class="font-['Nunito'] text-[16px] font-medium leading-tight">Boosts energy, mental clarity and
                 emotional balance
               </p>
             </div>
           </div>
-
-
-
-
           <!-- Clinicians' Choice Badge -->
           <div id="maximized" class="minimize mb-6 relative w-[72%]">
             <div class="background ">
@@ -251,48 +249,13 @@
                     <img src="https://assets.app.thefrontrowhealth.com/pa8nliuewz7t7g0dmxjawwf0kr5a" alt="Dr. Green"
                       style="z-index: 2;">
                   </span>
-                  <style>
-                    .images {
-                      display: inline-flex;
-                      align-items: center;
-                    }
-
-                    .images img {
-                      width: 16px;
-                      height: 16px;
-                      border-radius: 50%;
-                      object-fit: cover;
-                      background-color: #eee;
-                      border: 2px solid white;
-                      display: inline-block;
-                      vertical-align: middle;
-                    }
-
-                    .images img:nth-of-type(2) {
-                      margin-left: -6px;
-                    }
-
-                    .images img:nth-of-type(3) {
-                      margin-left: -6px;
-                    }
-                  </style>
                   <button class="testimonial-cta" onclick="scrollToTestimonials(event)"
                     aria-label="Click to read reviews from clinicians sharing this product">
                     <p class="hover:underline">Read their reviews</p>
                   </button>
                 </div>
-
-
-
-
-
-
-
-
               </div>
             </div>
-
-
 
             <button class="close-button" onclick="toggle()" id="close-button" aria-label="Click to minimize banner">
               <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
@@ -325,22 +288,20 @@
                 <div class="divide-y divide-white">
                   <div class="py-2 px-3 flex items-center gap-3 bg-[#039869]">
                     <div>
-                      <img src="/assets/truck.png" alt="" class="w-6 h-6">
+                      <img src="/assets/icons/truck.png" alt="" class="w-6 h-6">
                     </div>
                     <div class="text-white font-semibold text-sm">
                       Free USA Shipping
                     </div>
                   </div>
                 </div>
-
-
               </div>
 
             </div>
             <!-- Option 2: 2 Bottles -->
             <div class="px-3 selector-option relative" data-price="$63.92">
               <div class="absolute -top-5 right-0 z-10  scale-90">
-                <img src="/assets/valentine_day.svg" alt="Valentine's Day Sale" class="w-24 h-10">
+                <img src="/assets/badges/valentine_day.svg" alt="Valentine's Day Sale" class="w-24 h-10">
               </div>
               <div class="border-2 border-gray-200 rounded-xl overflow-hidden">
                 <div class="flex bg-white rounded-lg p-4 gap-3 items-center">
@@ -360,7 +321,7 @@
                 <div class="divide-y divide-white">
                   <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                     <div>
-                      <img src="/assets/truck.png" alt="" class="w-6 h-6">
+                      <img src="/assets/icons/truck.png" alt="" class="w-6 h-6">
                     </div>
                     <div class="text-white font-semibold text-sm">
                       Free USA Shipping
@@ -368,7 +329,7 @@
                   </div>
                   <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                     <div>
-                      <img src="/assets/download.png" alt="" class="w-6 h-6">
+                      <img src="/assets/icons/download.png" alt="" class="w-6 h-6">
                     </div>
                     <div class="text-white font-semibold text-sm">
                       Free Anti-Bloating Protocol E-book
@@ -398,7 +359,7 @@
                 <div class="divide-y divide-white">
                   <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                     <div>
-                      <img src="/assets/truck.png" alt="" class="w-6 h-6">
+                      <img src="/assets/icons/truck.png" alt="" class="w-6 h-6">
                     </div>
                     <div class="text-white font-semibold text-sm">
                       Free USA Shipping
@@ -407,7 +368,7 @@
 
                   <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                     <div>
-                      <img src="/assets/download.png" alt="" class="w-6 h-6">
+                      <img src="/assets/icons/download.png" alt="" class="w-6 h-6">
                     </div>
                     <div class="text-white font-semibold text-sm">
                       Free Anti-Bloating Protocol E-book
@@ -415,7 +376,7 @@
                   </div>
                   <div class="py-2 px-3 flex items-center gap-3 bg-[#5aae95]">
                     <div>
-                      <img src="/assets/gift.avif" alt="" class="w-6 h-6">
+                      <img src="/assets/misc/gift.avif" alt="" class="w-6 h-6">
                     </div>
                     <div class="text-white font-semibold text-sm">
                       $20 Gift Card
@@ -429,7 +390,7 @@
           </div>
 
           <div class="mt-4 flex gap-2">
-            <img src="/assets/truck.svg" alt="" class="w-6 h-6">
+            <img src="/assets/icons/truck.svg" alt="" class="w-6 h-6">
             <p>Delivered on <span class="py-1 px-2 bg-[#039869] rounded-sm text-white ">
                 Friday, 13 February
               </span>&nbsp;with Express Shipping</p>
@@ -440,26 +401,24 @@
         </div>
 
         <div class="my-4">
-          <img src="/assets/60-min.png" alt="">
+          <img src="/assets/badges/60-min.png" alt="">
         </div>
         <div class="pt-[15px] flex items-center gap-4 justify-center">
           <div class="flex gap-1 items-center">
-            <img src="/assets/circle.svg" alt="" class="w-4 h-4">
+            <img src="/assets/icons/circle.svg" alt="" class="w-4 h-4">
             <p>Refills Ship Every 8 Weeks</p>
           </div>
           <div class="h-3  w-px bg-black rounded-full"></div>
           <div class="flex gap-1 items-center">
-            <img src="/assets/clock.webp" alt="" class="w-4 h-4">
+            <img src="/assets/icons/clock.webp" alt="" class="w-4 h-4">
             <p>Stop or Cancel Anytime</p>
           </div>
         </div>
-
-
            <!-- Product Review Section -->
            <div class="mt-8 bg-[#f3eee0] rounded-lg lg:p-3">
             <div class="flex items-center gap-4 mb-6">
               <div class="w-16 h-16 sm:w-20 sm:h-20 shrink-0">
-                <img src="/assets/avatar.webp" alt="Margaret Ellison"
+                <img src="/assets/testimonials/avatar.webp" alt="Margaret Ellison"
                   class="w-full h-full rounded-full object-cover ">
               </div>
               <div class="flex flex-col gap-1.5">
@@ -467,7 +426,7 @@
                   <span class="font-['Nunito'] text-16px sm:text-[16px] text-gray-900 tracking-tight">Margaret Ellison |
                     FL</span>
                  <div>
-                  <img src="/assets/verified_customer.avif" alt="Verified" class="w-30 h-5 object-cover">
+                  <img src="/assets/badges/verified_customer.avif" alt="Verified" class="w-30 h-5 object-cover">
                  </div>
                 </div>
                 <div class="flex gap-0.5">
@@ -599,8 +558,6 @@
         </div>
      
 
-
-
      
      
      
@@ -608,19 +565,15 @@
      
       </div>
 
-
-
-
-
       <!-- Product Selector -->
-
-
       </div>
       </div>
     </section>
   </main>
 
-    <!-- As Seen In Section -->
+  <!-- ============================================ -->
+  <!-- AS SEEN IN SECTION -->
+  <!-- ============================================ -->
     <div class="section_press_logos_outer bg-[#f3eee0] py-5 w-full overflow-hidden">
       <div class="w-full">
         <h3 class="text-center font-['Trirong'] text-xl md:text-2xl text-gray-900 mb-5">As Seen In</h3>
@@ -663,7 +616,9 @@
       </div>
     </div>
 
-  <!-- Why Your Bloating is Connected Section -->
+  <!-- ============================================ -->
+  <!-- WHY YOUR BLOATING IS CONNECTED SECTION -->
+  <!-- ============================================ -->
   <section class="max-w-[1340px] box-border mx-auto pt-14 px-4 sm:px-[50px]">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -730,7 +685,7 @@
     </div>
 
     <!-- Arrows and Callout -->
-    <div class="">
+    <div>
       <img src="//trysculptique.com/cdn/shop/files/Group_7207.png?v=1760690771"
         class="hidden md:block w-full max-w-4xl mx-auto" alt="Explanation arrows">
       <img src="//trysculptique.com/cdn/shop/files/Frame_1000003583.png?v=1760690769" class="md:hidden w-full"
@@ -751,7 +706,7 @@
     </div>
 
     <!-- Connection Table Image -->
-    <div class="">
+    <div>
       <img src="//trysculptique.com/cdn/shop/files/Frame_1000003590.png?v=1760690771"
         class="hidden md:block w-full max-w-4xl mx-auto rounded" alt="Connection table desktop">
       <img src="//trysculptique.com/cdn/shop/files/Frame_1000003590_1.png?v=1760690770"
@@ -765,7 +720,9 @@
     </div>
   </section>
 
-  <!-- Your Hidden Drainage System Section -->
+  <!-- ============================================ -->
+  <!-- YOUR HIDDEN DRAINAGE SYSTEM SECTION -->
+  <!-- ============================================ -->
   <section class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px]">
     <div class="text-center my-4">
       <h2 class="font-['Lora'] text-[32px] sm:text-4xl md:text-5xl leading-tight">
@@ -786,15 +743,15 @@
           <!-- Success List -->
           <ul class="space-y-2">
             <li class="flex font-[Nunito] items-start font-bold gap-2 text-[#0c7c00]">
-              <img src="/assets/check-mark.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/icons/check-mark.png" alt="" class="w-5 h-5 shrink-0" />
               <span>Waste gets drained away</span>
             </li>
             <li class="flex font-[Nunito] items-star  font-bold gap-2 text-[#0c7c00]">
-              <img src="/assets/check-mark.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/icons/check-mark.png" alt="" class="w-5 h-5 shrink-0" />
               <span>Fluid stays balanced.</span>
             </li>
             <li class="flex mb-2 font-[Nunito] items-start font-bold gap-2 text-[#0c7c00]">
-              <img src="/assets/check-mark.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/icons/check-mark.png" alt="" class="w-5 h-5 shrink-0" />
               <span>Your body feels light and energized.</span>
             </li>
           </ul>
@@ -807,23 +764,23 @@
           </p>
         </div>
 
-        <div class="">
+        <div>
           <!-- Failure List -->
-          <ul class="">
+          <ul>
             <li class="flex my-2 items-start gap-2 text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span class="font-[Nunito] text-lg">Vessel pumping weakens.</span>
             </li>
             <li class="flex my-2 items-start gap-2 text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span class="font-[Nunito] text-lg">One-way valves fail.</span>
             </li>
             <li class="flex my-2 items-start gap-2 text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span class="font-[Nunito] text-lg">Protein clogs form.</span>
             </li>
             <li class="flex my-2 items-start gap-2 text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span class="font-[Nunito] text-lg">Vessel walls become leaky.</span>
             </li>
           </ul>
@@ -864,19 +821,19 @@
           </p>
           <ul class="space-y-3 mt-2">
             <li class="flex items-start gap-2  text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span>That's why you're bloated.</span>
             </li>
             <li class="flex items-start gap-2  text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span>That's why your ankles swell.</span>
             </li>
             <li class="flex items-start gap-2  text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span>That's why you see cellulite.</span>
             </li>
             <li class="flex items-start gap-2  text-[#a60003] font-bold">
-              <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
+              <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0" />
               <span>That's why you feel exhausted and foggy.</span>
             </li>
           </ul>
@@ -917,7 +874,7 @@
         <!-- Reason 1 -->
         <div class="bg-white rounded-md overflow-hidden shadow-sm flex flex-col h-full">
           <div class="relative w-full aspect-[4/3]">
-            <img src="assets/X1.jpg" alt="Dieting" class="w-full h-full object-cover">
+            <img src="/assets/misc/X1.jpg" alt="Dieting" class="w-full h-full object-cover">
 
           </div>
           <div class="p-6 flex-1 flex flex-col items-center text-center">
@@ -927,7 +884,7 @@
             <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col">
               <div class="flex items-center justify-center gap-2 mb-3">
                 <span class="font-['Nunito'] text-black ">Why it failed</span>
-                <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0">
+                <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0">
               </div>
               <p class="font-['Nunito'] font-bold text-sm sm:text-base text-center leading-relaxed">
                 Your diet only addressed what goes IN. It didn't fix your body's broken ability to drain what's already
@@ -940,7 +897,7 @@
         <!-- Reason 2 -->
         <div class="bg-white rounded-md overflow-hidden shadow-sm flex flex-col h-full">
           <div class="relative w-full aspect-[4/3]">
-            <img src="assets/X2.jpg" alt="Lymphatic drops" class="w-full h-full object-cover">
+            <img src="/assets/misc/X2.jpg" alt="Lymphatic drops" class="w-full h-full object-cover">
 
           </div>
           <div class="p-6 flex-1 flex flex-col items-center text-center">
@@ -950,7 +907,7 @@
             <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col justify-center">
               <div class="flex justify-center gap-2 mb-3">
                 <span class="font-['Nunito']">Why it failed</span>
-                <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0">
+                <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0">
               </div>
               <p class="font-['Nunito'] font-bold text-center text-sm sm:text-base leading-relaxed">
                 They’re just pricey water with trace herbs. The "active ingredients" are destroyed by stomach acid, and
@@ -964,7 +921,7 @@
         <!-- Reason 3 -->
         <div class="bg-white rounded-md overflow-hidden shadow-sm flex flex-col h-full">
           <div class="relative w-full aspect-[4/3]">
-            <img src="assets/X3.jpg" alt="Lymphatic massage" class="w-full h-full object-cover">
+            <img src="/assets/misc/X3.jpg" alt="Lymphatic massage" class="w-full h-full object-cover">
           </div>
           <div class="p-6 flex-1 flex flex-col items-center text-center">
             <h4 class="font-serif text-[20px] sm:text-[20px] text-gray-900 leading-tight mb-4">
@@ -973,7 +930,7 @@
             <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col">
               <div class="flex items-center justify-center gap-2 mb-3">
                 <span class="font-['Nunito']">Why it failed</span>
-                <img src="/assets/Vector_7.png" alt="" class="w-5 h-5 shrink-0">
+                <img src="/assets/misc/Vector_7.png" alt="" class="w-5 h-5 shrink-0">
               </div>
               <p class="font-['Nunito'] font-bold text-center text-sm sm:text-base leading-relaxed">
                 Temporary manual movement. Within 24-48 hours, everything backed up again because your vessels still
@@ -1019,10 +976,12 @@
     </div>
   </section>
 
-  <!-- Ingredients System Section -->
-  <section class="bg-[#f3eee0] py-16">
+  <!-- ============================================ -->
+  <!-- INGREDIENTS SYSTEM SECTION -->
+  <!-- ============================================ -->
+  <section class="bg-[#f3eee0] py-14">
     <div class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px]">
-      <div class="text-center mt-10 max-w-4xl mx-55 space-y-4">
+      <div class="text-center max-w-4xl mx-55 space-y-4">
         <h2 class="font-['Lora'] text-3xl md:text-[32px]  text-gray-900 leading-tight my-4">
           <span class="text-[#039869]">The 8-Ingredient System</span> That Restores What Hormones Once Maintained
         </h2>
@@ -1061,13 +1020,12 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease  text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Restores rhythmic vessel contractions that move lymph through your system. Contains
+              <p>Restores rhythmic vessel contractions that move lymph through your system. Contains
                 iridoids
                 that "wake up" muscle cells in vessel walls. 2024 study showed enhanced immune cell activity for better
                 waste
                 clearance.</p>
               <p> [Study: Enhanced NK cell activity in immunosuppressed models]</p>
-              <!-- <p class="">[Study: Enhanced NK cell activity in immunosuppressed models]</p> -->
             </div>
           </div>
         </div>
@@ -1094,11 +1052,11 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease  text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Proven gentle diuretic that increases fluid excretion without harsh side effects. Human
+              <p>Proven gentle diuretic that increases fluid excretion without harsh side effects. Human
                 trial
                 showed statistically significant increase in urination frequency (p&lt;0.05) and excretion ratio
                 (p&lt;0.001).</p>
-              <p class="">[Study: First human pilot study on diuretic effects]</p>
+              <p>[Study: First human pilot study on diuretic effects]</p>
             </div>
           </div>
         </div>
@@ -1130,10 +1088,10 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Proteolytic enzyme that clears blockages preventing drainage. Breaks down fibrin proteins
+              <p>Proteolytic enzyme that clears blockages preventing drainage. Breaks down fibrin proteins
                 creating "sludge" in vessels. 2024 RCT showed significantly greater reductions in swelling than placebo.
               </p>
-              <p class="">[Study: As effective as prescription NSAIDs for inflammation]</p>
+              <p>[Study: As effective as prescription NSAIDs for inflammation]</p>
             </div>
           </div>
         </div>
@@ -1161,10 +1119,10 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Reduces vessel permeability so fluid doesn't leak back into tissues. Clinical trials
+              <p>Reduces vessel permeability so fluid doesn't leak back into tissues. Clinical trials
                 showed
                 average 4.2 cm reduction in limb circumference over 6 months in lymphedema patients.</p>
-              <p class="">[Study: Systematic review of 1,643 participants]</p>
+              <p>[Study: Systematic review of 1,643 participants]</p>
             </div>
           </div>
         </div>
@@ -1192,9 +1150,9 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Breaks the inflammation-congestion cycle. RCT showed significantly decreased inflammatory
+              <p>Breaks the inflammation-congestion cycle. RCT showed significantly decreased inflammatory
                 markers IL-6 and C-reactive protein (p&lt;0.001). Also supports hormonal balance.</p>
-              <p class="">[Study: 42-day trial in osteoarthritis patients]</p>
+              <p>[Study: 42-day trial in osteoarthritis patients]</p>
             </div>
           </div>
         </div>
@@ -1222,10 +1180,10 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Enhances lymphocyte activity for better waste removal. Meta-analysis of 30 trials with
+              <p>Enhances lymphocyte activity for better waste removal. Meta-analysis of 30 trials with
                 5,600+
                 participants showed 40% reduction in recurrent infections.</p>
-              <p class="">[Study: Increased NK cell cytotoxic activity]</p>
+              <p>[Study: Increased NK cell cytotoxic activity]</p>
             </div>
           </div>
         </div>
@@ -1253,10 +1211,10 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Provides iodine for thyroid function and healthy metabolic rate. Sluggish thyroid =
+              <p>Provides iodine for thyroid function and healthy metabolic rate. Sluggish thyroid =
                 sluggish
                 lymphatic drainage. Contains fucoxanthin shown to reduce body fat in human trials.</p>
-              <p class="">[Study: Dose-dependent increase in TSH levels]</p>
+              <p>[Study: Dose-dependent increase in TSH levels]</p>
             </div>
           </div>
         </div>
@@ -1284,9 +1242,9 @@
           <div
             class="ingredient-content max-h-0 overflow-hidden transition-all duration-[750ms] ease text-sm text-gray-700 leading-relaxed">
             <div class="p-4">
-              <p class="">Protects vessels from oxidative damage. RCT showed 145% improvement in vascular function
+              <p>Protects vessels from oxidative damage. RCT showed 145% improvement in vascular function
                 (p&lt;0.001). Supports circulation and metabolic health.</p>
-              <p class="">[Study: Triple-masked trial in 90 participants]</p>
+              <p>[Study: Triple-masked trial in 90 participants]</p>
             </div>
           </div>
         </div>
@@ -1299,7 +1257,9 @@
     </div>
   </section>
 
-  <!-- Customer Reviews Section -->
+  <!-- ============================================ -->
+  <!-- CUSTOMER REVIEWS SECTION -->
+  <!-- ============================================ -->
   <section class="bg-white py-14">
     <div class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px]">
       <!-- Header -->
@@ -1313,7 +1273,7 @@
       </div>
 
       <!-- Reviews Summary Widget -->
-      <div class="">
+      <div>
         <h3 class="font-serif text-2xl text-center mb-3">Customer Reviews</h3>
        
         <div
@@ -1343,7 +1303,7 @@
               <span class=" ">4.68 out of 5</span>
             </div>
     
-            <p class="text-[16px]  flex items-center gap-1">Based on 111 review<img src="/assets/verified-checkmark.svg" alt="Verified Checkmark" class="w-4 h-4 object-contain"></span></p>
+            <p class="text-[16px]  flex items-center gap-1">Based on 111 review<img src="/assets/icons/verified-checkmark.svg" alt="Verified Checkmark" class="w-4 h-4 object-contain"></span></p>
           </div>
 
           <!-- Rating Bars -->
@@ -1430,8 +1390,6 @@
                 Write a review
               </button>
             </div>
-
-
        
         </div>
 
@@ -1565,7 +1523,7 @@
         <!-- Diamond Badge (always outside form) -->
         <div class="flex justify-center pb-8">
           <div class="py-4">
-            <img src="/assets/diamond.svg" alt="Diamond Authenticity 100.0" class="w-20 h-20">
+            <img src="/assets/icons/diamond.svg" alt="Diamond Authenticity 100.0" class="w-20 h-20">
           </div>
         </div>
         <!-- Filter Dropdown -->
@@ -1631,7 +1589,9 @@
       </div>
   </section>
 
-  <!-- Product Icons Section -->
+  <!-- ============================================ -->
+  <!-- PRODUCT ICONS SECTION -->
+  <!-- ============================================ -->
   <section class="bg-[#f3eee0]">
     <div class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px]">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center py-8">
@@ -1678,7 +1638,9 @@
     </div>
   </section>
 
-  <!-- Expert Advice Section -->
+  <!-- ============================================ -->
+  <!-- EXPERT ADVICE SECTION -->
+  <!-- ============================================ -->
   <section class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px] py-14">
     <div class="bg-[#f7f2f2] rounded-md overflow-hidden shadow-sm flex flex-col md:flex-row items-stretch">
       <!-- Left Content -->
@@ -1722,9 +1684,9 @@
     </div>
   </section>
 
-
-
-  <!-- Success Stories Section -->
+  <!-- ============================================ -->
+  <!-- SUCCESS STORIES SECTION -->
+  <!-- ============================================ -->
   <section class="bg-[#f3eee0] py-14 overflow-hidden">
   <div class="box-border max-w-[1340px] mx-auto px-4 sm:px-[50px]">
       <!-- Social Proof Header -->
@@ -1858,12 +1820,12 @@
             <button
               class="w-10 h-10 rounded-full  flex items-center justify-center transition-colors"
               id="scroll-prev">
-              <img src="/public/assets/left.webp" alt="Previous" class="w-10 h-10 object-contain" />
+              <img src="/assets/misc/left.webp" alt="Previous" class="w-10 h-10 object-contain" />
             </button>
             <button
               class="w-10 h-10 rounded-full rotate-180 flex items-center justify-center transition-colors"
               id="scroll-next">
-              <img src="/public/assets/right.webp" alt="Next" class="w-10 h-10 object-contain" />
+              <img src="/assets/misc/right.webp" alt="Next" class="w-10 h-10 object-contain" />
             </button>
           </div>
         </div>
@@ -1884,9 +1846,9 @@
     </div>
   </section>
 
-  <!-- FAQ Section (Moved) -->
-
-
+  <!-- ============================================ -->
+  <!-- FAQ SECTION -->
+  <!-- ============================================ -->
   <section class="bg-white py-14">
     <div class="max-w-3xl mx-auto px-4">
       <h2 class="font-['Lora'] text-[32px] md:text-[32px] mb-12 text-center text-[#121212]">Frequently Asked Questions
@@ -2135,7 +2097,9 @@
     </div>
   </section>
 
-  <!-- Stats Mission Section -->
+  <!-- ============================================ -->
+  <!-- STATS MISSION SECTION -->
+  <!-- ============================================ -->
   <section class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px] py-16 bg-white">
     <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] items-center">
       <!-- Left Content -->
@@ -2171,12 +2135,14 @@
     </div>
   </section>
 
-  <!-- Stop Masking Symptoms Section -->
+  <!-- ============================================ -->
+  <!-- STOP MASKING SYMPTOMS SECTION -->
+  <!-- ============================================ -->
   <section class="bg-[#f3eee0] py-16">
     <div class="max-w-[1340px] box-border mx-auto px-4 sm:px-[50px]">
       <div class="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-[64px] items-center">
         <!-- Left Content (Text) -->
-        <div class="">
+        <div>
           <!-- Trustpilot Reviews -->
           <div>
             <img loading="lazy"
@@ -2231,16 +2197,6 @@
       </div>
     </div>
   </section>
-
-
-
-
-
-
-
-
-
-
 
   <!-- Write a Review Modal -->
   <div id="review-modal"
@@ -2443,7 +2399,7 @@
             <path d="M22.5 15L17.5 20L22.5 25" stroke="currentColor" stroke-width="2"></path>
           </svg>
         </button>
-        <img src="/assets/logo.avif" alt="FrontrowMD" class="fr-logo h-6 w-auto object-contain">
+        <img src="/assets/logos/logo.avif" alt="FrontrowMD" class="fr-logo h-6 w-auto object-contain">
         <button type="button" class="fr-close-icon" onclick="closeAll()" aria-label="Close all modals">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 11L11 1M1 1L11 11" stroke="currentColor" stroke-width="2"></path>
@@ -2564,7 +2520,7 @@
                <a  href="https://app.thefrontrowhealth.com/provider/MSADEK/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1468, 'MSADEK')" aria-label="Preview Dr. Mona Sadek, MD discounts pages in a new tab">
               Preview
             </a>
-            <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+            <img src="/assets/icons/link.svg" alt="Link" class="w-4 h-4">
 
             </div>
            
@@ -2586,7 +2542,7 @@
               <a href="https://app.thefrontrowhealth.com/provider/MCHEWNING/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1457, 'MCHEWNING')" aria-label="Preview Dr. Mark Chewning discounts pages in a new tab">
                 Preview
               </a>
-              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+              <img src="/assets/icons/link.svg" alt="Link" class="w-4 h-4">
             </div>
           </div>
 
@@ -2606,7 +2562,7 @@
               <a href="https://app.thefrontrowhealth.com/provider/IKAUSHIK/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1381, 'IKAUSHIK')" aria-label="Preview Dr. Iris Kaushik, MD discounts pages in a new tab">
                 Preview
               </a>
-              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+              <img src="/assets/icons/link.svg" alt="Link" class="w-4 h-4">
             </div>
           </div>
 
@@ -2626,7 +2582,7 @@
               <a href="https://app.thefrontrowhealth.com/provider/JSHIPP/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1348, 'JSHIPP')" aria-label="Preview Dr. Jared Shipp, DPM discounts pages in a new tab">
                 Preview
               </a>
-              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+              <img src="/assets/icons/link.svg" alt="Link" class="w-4 h-4">
             </div>
           </div>
 
@@ -2646,13 +2602,13 @@
               <a href="https://app.thefrontrowhealth.com/provider/KHUBACH/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1471, 'KHUBACH')" aria-label="Preview Dr. Kurt Hubach, MD discounts pages in a new tab">
                 Preview
               </a>
-              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+              <img src="/assets/icons/link.svg" alt="Link" class="w-4 h-4">
             </div>
           </div>
         </div>
 
         <div class="fr-full-provider-list-bottom">
-          <a class="" href="https://app.thefrontrowhealth.com/general-store/all?pid=2691&amp;utm_source=880&amp;utm_medium=2691&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;spi=true" target="_blank" onclick="frTrackClickCompleteList()" aria-label="Click here to see the complete list of clinicians in a new tab">
+          <a href="https://app.thefrontrowhealth.com/general-store/all?pid=2691&amp;utm_source=880&amp;utm_medium=2691&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;spi=true" target="_blank" onclick="frTrackClickCompleteList()" aria-label="Click here to see the complete list of clinicians in a new tab">
             <span>See the full list of clinicians and learn more</span>
           </a>
         </div>
@@ -2664,580 +2620,6 @@
   </div>
 
   <script type="module" src="./src/main.js"></script>
-  <style>
-    .scrollbar-hide::-webkit-scrollbar {
-      display: none;
-    }
-
-    .scrollbar-hide {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .product_ugc-video {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    .product_ugc-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .product_ugc-play {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      cursor: pointer;
-      z-index: 10;
-      transition: transform 0.2s;
-      pointer-events: auto;
-    }
-
-    .product_ugc-play:hover {
-      transform: translate(-50%, -50%) scale(1.1);
-    }
-
-    /* Video carousel: show 4 videos by default on desktop */
-    @media (min-width: 1024px) {
-      #video-scroll {
-        --video-gap: 1rem; /* khớp với gap-4 của Tailwind */
-        column-gap: var(--video-gap);
-      }
-
-      #video-scroll .video-card {
-        /* 4 video + 3 khoảng cách = 100% chiều rộng container */
-        flex: 0 0 calc((100% - (3 * var(--video-gap))) / 4);
-        max-width: calc((100% - (3 * var(--video-gap))) / 4);
-        min-width: 0 !important;
-      }
-    }
-
-    /* FrontrowMD Modal */
-    .fr-modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      z-index: 1000;
-      padding-top: 80px;
-    }
-
-    .fr-modal-overlay.hidden {
-      display: none;
-    }
-
-    .fr-modal {
-      background: #ffffff;
-      border-radius: 16px;
-      width: min(530px, 95vw);
-      height: min(620px);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
-    }
-
-    .fr-modal-header-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      border-bottom: 1px solid #eee;
-      position: relative;
-    }
-
-    .fr-modal-logo {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .fr-modal-logo a {
-      pointer-events: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-
-    .fr-close-icon {
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      color: #212121;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      border-radius: 999px;
-      box-sizing: border-box;
-    }
-
-
-    .fr-close-icon:hover {
-      background-color: #EEEEEE;
-    }
-    .fr-back-icon:hover{
-      background-color: #EEEEEE;
-      border-radius: 999px;
-    }
-
-    .fr-logo {
-      filter: invert(1);
-    }
-
-    .fr-modal-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      padding: 24px;
-      overflow-y: auto;
-    }
-
-    .fr-question-title {
-      font-weight: 600;
-      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #212121;
-    }
-
-    .fr-accordion {
-     
-      padding: 12px 16px;
-      margin-bottom: 10px;
-
-    }
-
-    .fr-accordion-content {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      cursor: pointer;
-    }
-
-    .fr-accordion-content::-webkit-details-marker {
-      display: none;
-    }
-
-    .fr-question-answer {
-      display: block;
-      margin-top: 10px;
-      font-size: 14px;
-      color: #444;
-      line-height: 1.5;
-      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .fr-expand-minus {
-      display: none;
-    }
-
-    .fr-accordion[open] .fr-expand-plus {
-      display: none;
-    }
-
-    .fr-accordion[open] .fr-expand-minus {
-      display: inline-flex;
-    }
-
-    .fr-provider-list-title {
-      font-weight: 700;
-      margin-bottom: 4px;
-      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .fr-provider-list-subtitle {
-      font-size: 13px;
-      color: #555;
-      margin-bottom: 12px;
-    }
-
-    .fr-view-all-link {
-      text-decoration: underline;
-      color: #039869;
-      font-weight: 600;
-    }
-
-    .fr-provider-list-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .fr-provider-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .fr-provider-name {
-      border: none;
-      background: transparent;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .fr-provider-name figure {
-      margin: 0;
-      position: relative;
-    }
-
-    .fr-provider-name img {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      object-fit: cover;
-    }
-
-    .fr-provider-name figcaption {
-      position: absolute;
-      right: -4px;
-      bottom: -4px;
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      background: #039869;
-      color: #fff;
-      font-size: 11px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-    }
-
-    .fr-provider-details {
-      font-size: 12px;
-      color: #666;
-      margin: 0;
-    }
-
-    .fr-view-store-button {
-      border-radius: 24px;
-      background-color: #EEE;
-      padding: 10px 20px;
-      font-size: 13px;
-    
-      font-weight: 600;
-   
-      white-space: nowrap;
-    }
-
-    .fr-full-provider-list-bottom {
-      margin-top: 12px;
-    }
-
-    .fr-view-all-providers-link-bottom {
-      font-size: 13px;
-      color: #039869;
-      text-decoration: underline;
-      font-weight: 600;
-    }
-
-    .fr-disclaimer {
-      margin-top: 16px;
-      font-size: 12px;
-      color: #777;
-    }
-
-    body.fr-modal-open,
-    html.fr-modal-open {
-      overflow: hidden;
-    }
-
-    /* Clinicians' Choice Badge Styles */
-    /* #maximized {
-      background-color: #f5f5f5;
-      border: 1px dashed #d0d0d0;
-      border-radius: 8px;
-      padding: 16px;
-      position: relative;
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-    } */
-
-    #maximized {
-      position: relative;
-      overflow: hidden;
-    }
-
-    #maximized.minimize {
-      display: block !important;
-      visibility: visible !important;
-    }
-
-    #maximized.hidden {
-      /* Keep the space but hide content */
-    }
-
-    #maximized.hidden .background {
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    #maximized.hidden .close-button {
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    #maximized .background {
-      display: flex !important;
-      align-items: center;
-      gap: 16px;
-      visibility: visible !important;
-      transition: transform 750ms ease-in-out, opacity 750ms ease-in-out;
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-    #maximized.closing .background {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-
-    #maximized .heading {
-      display: flex !important;
-      align-items: center;
-      gap: 8px;
-      flex-shrink: 0;
-      visibility: visible !important;
-    }
-
-    #maximized .heading svg {
-      width: 17px;
-      height: 35px;
-    }
-
-    #maximized .heading p {
-      font-size: 12px;
-      font-weight: bold;
-      color: #212121;
-      margin: 0;
-      line-height: 1.2;
-      text-align: center;
-    }
-
-    #maximized .column {
-      flex: 1;
-      display: block !important;
-      visibility: visible !important;
-    }
-
-    #maximized .column p {
-      font-size: 12px;
-      color: #212121;
-      margin: 0 0 8px 0;
-      line-height: 1.5;
-    }
-
-    #maximized .bold {
-      font-weight: 600;
-    }
-
-    #maximized .italics {
-      font-style: italic;
-    }
-
-    #maximized .learn-more {
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-     
-      color: #212121;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    #maximized .learn-more p {
-      margin: 0;
-      display: inline;
-    }
-
-    #maximized .cta {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    #maximized .cta .images {
-      display: flex;
-      align-items: center;
-    }
-
-    #maximized .testimonial-cta {
-      background: none;
-      border: none;
-      padding: 0;
-      margin: 0;
-      font-weight: bold;
-      font-size: 12px;
-      color: #212121;
-      cursor: pointer;
-    }
-
-    #maximized .testimonial-cta p {
-      margin: 0;
-    }
-
-    #maximized .close-button {
-      position: absolute;
-      top: 2px;
-      right: 8px;
-      background: #e0e0e0;
-      border: none;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      padding: 0;
-      transition: background-color 0.2s;
-      z-index: 999;
-      pointer-events: auto;
-    }
-
-    #maximized .close-button:hover {
-      background: #d0d0d0;
-    }
-
-    #maximized .close-button svg {
-      width: 6px;
-      height: 6px;
-    }
-
-    /* Nutritional Information Modal Styles */
-    .Desktop_only {
-      display: block;
-    }
-
-    .Mobile_only {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .Desktop_only {
-        display: none;
-      }
-
-      .Mobile_only {
-        display: block;
-      }
-    }
-
-    /* Marquee Animation - Infinite loop full screen */
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .auto_scrolling_logos {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .logos {
-      display: flex;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .logos-slide {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      animation: scroll 25s linear infinite;
-      will-change: transform;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .logos-slide img {
-      flex-shrink: 0;
-    }
-
-    .press_logo {
-      transition: opacity 0.3s ease;
-    }
-
-    .press_logo:hover {
-      opacity: 0.8;
-    }
-
-    /* Marquee Animation for As Seen In */
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .marquee-container {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .marquee-track {
-      display: flex;
-      width: fit-content;
-      animation: marquee 30s linear infinite;
-      will-change: transform;
-    }
-
-    .marquee-slide {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    /* Product Tab Blocks Accordion Styles */
-    .product_tab-block {
-      transition: all 0.3s ease;
-    }
-
-    .product_tab-block.active {
-      border-color: #039869;
-    }
-
-    .product_tab-thumb img {
-      width: 24px;
-      height: 24px;
-      object-fit: contain;
-      display: block;
-    }
-  </style>
 
 </body>
 

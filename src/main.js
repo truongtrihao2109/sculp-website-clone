@@ -263,6 +263,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterSelect = document.getElementById('filter-select');
     const filterLabel = document.getElementById('filter-label');
     const reviewsListEl = document.getElementById('reviews-list');
+    const paginateContainer = document.querySelector('.jdgm-paginate');
+    const paginateLinks = paginateContainer
+        ? Array.from(paginateContainer.querySelectorAll('.jdgm-paginate__page'))
+        : [];
+    const pageSize = paginateContainer
+        ? parseInt(paginateContainer.dataset.perPage, 10) || 5
+        : 5;
+
+    let currentFilterValue = filterSelect ? filterSelect.value : 'Most Helpful';
+    let currentPage = 1;
 
     // Mock review data for filtering
     const reviewsData = [
@@ -320,6 +330,83 @@ document.addEventListener('DOMContentLoaded', () => {
             helpful: 7,
             hasPhoto: false,
             hasVideo: false
+        },
+        {
+            id: 6,
+            author: 'Sarah D.',
+            rating: 5,
+            verified: true,
+            date: '2025-08-20',
+            content: 'My legs feel so much lighter by the afternoon. I used to dread standing all day at work, now it is noticeably easier.',
+            helpful: 40,
+            hasPhoto: true,
+            hasVideo: false
+        },
+        {
+            id: 7,
+            author: 'Linda P.',
+            rating: 3,
+            verified: true,
+            date: '2025-08-18',
+            content: 'Results are subtle so far, but my compression socks fit a bit easier. Hoping the next month shows more changes.',
+            helpful: 9,
+            hasPhoto: false,
+            hasVideo: false
+        },
+        {
+            id: 8,
+            author: 'Amanda K.',
+            rating: 5,
+            verified: true,
+            date: '2025-08-10',
+            content: 'The swelling around my ankles is down a lot. Clothes fit better and I feel less puffy overall.',
+            helpful: 28,
+            hasPhoto: true,
+            hasVideo: true
+        },
+        {
+            id: 9,
+            author: 'Jennifer R.',
+            rating: 4,
+            verified: true,
+            date: '2025-08-05',
+            content: 'Not a miracle overnight, but this is the first supplement where friends actually commented that I look less bloated.',
+            helpful: 16,
+            hasPhoto: false,
+            hasVideo: false
+        },
+        {
+            id: 10,
+            author: 'Monica L.',
+            rating: 5,
+            verified: true,
+            date: '2025-07-30',
+            content: 'I combined Sculptique with light walking and my calves are no longer as tight and sore. Very happy so far.',
+            helpful: 21,
+            hasPhoto: true,
+            hasVideo: false
+        },
+        {
+            id: 11,
+            author: 'Catherine B.',
+            rating: 3,
+            verified: true,
+            date: '2025-07-25',
+            content: 'Only a couple of weeks in, small changes but nothing huge yet. I will finish the bottle before deciding.',
+            helpful: 5,
+            hasPhoto: false,
+            hasVideo: true
+        },
+        {
+            id: 12,
+            author: 'Olivia H.',
+            rating: 5,
+            verified: true,
+            date: '2025-07-18',
+            content: 'Cellulite dimples on the back of my thighs are softer and less deep. I really did not expect to see this much change.',
+            helpful: 34,
+            hasPhoto: true,
+            hasVideo: false
         }
     ];
 
@@ -343,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const buildReviewHtml = (review) => `
-        <div class="border-t border-gray-100 pt-8">
+        <div class="border-t-2 border-gray-100 pt-8">
           <div class="flex items-center justify-between mb-2">
             <div class="flex text-[#ff7373]">
               ${renderStars(review.rating)}
@@ -357,11 +444,11 @@ document.addEventListener('DOMContentLoaded', () => {
               </svg>
             </div>
             <div class="flex justify-center items-center gap-2">
-              <span class="text-[#ff7373] text-sm block">${review.author}</span>
+              <span class="text-[#ff7373] text-[16px] block">${review.author}</span>
               ${review.verified ? '<span class="text-[10px] text-white bg-[#ff7373] px-1 tracking-wide">Verified</span>' : ''}
             </div>
           </div>
-          <div class="text-gray-700 text-sm leading-relaxed">
+          <div class="font-[Nunito] text-[16px] leading-relaxed">
             <p>${review.content}</p>
           </div>
         </div>
@@ -395,19 +482,72 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const applyReviewFilter = (filterValue) => {
-        const items = getFilteredReviews(filterValue || 'Most Helpful');
-        renderReviews(items);
+    const updatePaginationUI = (totalItems) => {
+        if (!paginateContainer || !paginateLinks.length) return;
+
+        const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+
+        paginateLinks.forEach((link) => {
+            const isNext = link.classList.contains('jdgm-paginate__next-page');
+            const isLast = link.classList.contains('jdgm-paginate__last-page');
+
+            if (isLast) {
+                // Ensure last button always points to final page
+                link.dataset.page = String(totalPages);
+            }
+
+            if (isNext || isLast) {
+                // Control buttons share the inactive style
+                link.classList.remove('jdgm-curt', 'text-base', 'text-gray-700');
+                link.classList.add('text-[#ffaaa0]');
+                return;
+            }
+
+            const page = Number(link.dataset.page);
+            if (!page || page > totalPages) {
+                link.classList.add('hidden');
+                return;
+            }
+
+            link.classList.remove('hidden');
+            link.classList.remove('jdgm-curt', 'text-base', 'text-gray-700', 'text-[#ffaaa0]');
+
+            if (page === currentPage) {
+                link.classList.add('jdgm-curt', 'text-base', 'text-gray-700');
+            } else {
+                link.classList.add('text-[#ffaaa0]');
+            }
+        });
+    };
+
+    const applyReviewFilter = (filterValue, page) => {
+        currentFilterValue = filterValue || 'Most Helpful';
+        const allItems = getFilteredReviews(currentFilterValue);
+        const totalItems = allItems.length;
+
+        if (!paginateContainer) {
+            renderReviews(allItems);
+            return;
+        }
+
+        const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+        currentPage = Math.min(Math.max(page || 1, 1), totalPages);
+
+        const start = (currentPage - 1) * pageSize;
+        const pageItems = allItems.slice(start, start + pageSize);
+
+        renderReviews(pageItems);
+        updatePaginationUI(totalItems);
     };
 
     if (filterSelect && filterLabel) {
         // Initial render
-        applyReviewFilter(filterSelect.value);
+        applyReviewFilter(filterSelect.value, 1);
 
         filterSelect.addEventListener('change', (e) => {
             const value = e.target.value;
             filterLabel.textContent = value;
-            applyReviewFilter(value);
+            applyReviewFilter(value, 1);
         });
         // Ensure click works (just in case)
         filterSelect.addEventListener('click', (e) => {
@@ -415,7 +555,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else if (reviewsListEl) {
         // Fallback: render default ordering if filter UI is missing
-        applyReviewFilter('Most Helpful');
+        applyReviewFilter('Most Helpful', 1);
+    }
+
+    if (paginateContainer && paginateLinks.length) {
+        paginateLinks.forEach((link) => {
+            const isNext = link.classList.contains('jdgm-paginate__next-page');
+            const isLast = link.classList.contains('jdgm-paginate__last-page');
+
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const allItems = getFilteredReviews(currentFilterValue);
+                const totalItems = allItems.length;
+                const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+
+                let targetPage;
+                if (isNext) {
+                    targetPage = Math.min(currentPage + 1, totalPages);
+                } else if (isLast) {
+                    targetPage = totalPages;
+                } else {
+                    const p = parseInt(link.dataset.page, 10);
+                    targetPage = Number.isNaN(p) ? 1 : p;
+                }
+
+                if (targetPage === currentPage) return;
+
+                applyReviewFilter(currentFilterValue, targetPage);
+            });
+        });
     }
 
     // Write Review Inline Form Logic

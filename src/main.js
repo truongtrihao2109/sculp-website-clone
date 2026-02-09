@@ -274,28 +274,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Write Review Inline Form Logic
-    // Write Review Inline Form Logic
     const reviewBtn = document.getElementById('write-review-btn');
     const reviewFormContainer = document.getElementById('review-form-container');
     const cancelReviewBtn = document.getElementById('cancel-review');
+    const reviewPanel = document.getElementById('review-panel');
 
-    if (reviewBtn && reviewFormContainer && cancelReviewBtn) {
-        // Toggle Form
-        reviewBtn.addEventListener('click', () => {
-            const isHidden = reviewFormContainer.classList.contains('hidden');
-            if (isHidden) {
-                reviewFormContainer.classList.remove('hidden');
+    if (reviewBtn && reviewFormContainer && cancelReviewBtn && reviewPanel) {
+        const setReviewOpen = (open) => {
+            if (open) {
+                // Expand panel with smooth accordion-like animation
+                reviewPanel.style.maxHeight = reviewPanel.scrollHeight + 'px';
+                reviewPanel.dataset.open = 'true';
                 reviewBtn.textContent = 'Cancel review';
             } else {
-                reviewFormContainer.classList.add('hidden');
+                // Collapse panel
+                reviewPanel.style.maxHeight = '0px';
+                reviewPanel.dataset.open = 'false';
                 reviewBtn.textContent = 'Write a review';
             }
+        };
+
+        // Ensure initial state is closed
+        setReviewOpen(false);
+
+        // Toggle Form
+        reviewBtn.addEventListener('click', () => {
+            const isOpen = reviewPanel.dataset.open === 'true';
+            setReviewOpen(!isOpen);
         });
 
         // Close Form (Cancel Button)
         cancelReviewBtn.addEventListener('click', () => {
-            reviewFormContainer.classList.add('hidden');
-            reviewBtn.textContent = 'Write a review';
+            setReviewOpen(false);
         });
     }
 

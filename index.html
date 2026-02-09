@@ -260,7 +260,7 @@
                   on <span class="italics">FrontrowMD <br/> </span> without compensation.
                   <button class="learn-more" onclick="openFrontrowModal()"
                     aria-label="Click to learn more about the clinicians sharing this product">
-                    <p class=" underline underline-offset-4">Learn more</p>
+                    <p class="underline-offset-3 underline">Learn more</p>
                   </button>
                 </p>
                 <div class="cta">
@@ -315,7 +315,7 @@
 
 
 
-            <button class="close-button " onclick="toggle()" id="close-button" aria-label="Click to minimize banner">
+            <button class="close-button" onclick="toggle()" id="close-button" aria-label="Click to minimize banner">
               <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 6 6" fill="none">
                 <path d="M1 5.5L0.5 5L2.5 3L0.5 1L1 0.5L3 2.5L5 0.5L5.5 1L3.5 3L5.5 5L5 5.5L3 3.5L1 5.5Z"
                   fill="#212121"></path>
@@ -2963,10 +2963,28 @@
       opacity: 1 !important;
     } */
 
+    #maximized {
+      position: relative;
+      overflow: hidden;
+    }
+
     #maximized.minimize {
       display: block !important;
       visibility: visible !important;
-      opacity: 1 !important;
+    }
+
+    #maximized.hidden {
+      /* Keep the space but hide content */
+    }
+
+    #maximized.hidden .background {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    #maximized.hidden .close-button {
+      visibility: hidden;
+      opacity: 0;
     }
 
     #maximized .background {
@@ -2974,6 +2992,14 @@
       align-items: center;
       gap: 16px;
       visibility: visible !important;
+      transition: transform 750ms ease-in-out, opacity 750ms ease-in-out;
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    #maximized.closing .background {
+      transform: translateX(-100%);
+      opacity: 0;
     }
 
     #maximized .heading {
@@ -3024,7 +3050,7 @@
       border: none;
       padding: 0;
       margin: 0;
-      text-decoration: underline;
+     
       color: #212121;
       cursor: pointer;
       font-size: 12px;
@@ -3063,7 +3089,7 @@
 
     #maximized .close-button {
       position: absolute;
-      top: -2px;
+      top: 2px;
       right: 8px;
       background: #e0e0e0;
       border: none;
@@ -3076,6 +3102,8 @@
       cursor: pointer;
       padding: 0;
       transition: background-color 0.2s;
+      z-index: 999;
+      pointer-events: auto;
     }
 
     #maximized .close-button:hover {

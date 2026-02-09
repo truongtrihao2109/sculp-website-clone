@@ -818,4 +818,19 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(website, '_blank');
         }
     };
+
+    // Toggle function for Clinicians' Choice Banner
+    window.toggle = () => {
+        const maximized = document.getElementById('maximized');
+        if (!maximized) return;
+        
+        // Add closing class to trigger animation on .background
+        maximized.classList.add('closing');
+        
+        // After animation completes, hide content but keep structure
+        setTimeout(() => {
+            maximized.classList.add('hidden');
+            // Keep 'closing' class to maintain the hidden state
+        }, 750); // Match transition duration
+    };
 });

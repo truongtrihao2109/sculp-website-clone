@@ -2425,19 +2425,19 @@
   </div>
 
   <!-- Nutritional Information Modal -->
-  <div id="nutrition-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4">
+  <div id="nutrition-modal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-2 sm:p-4">
     <div
-      class="nutrition_popup-inner bg-white rounded-lg shadow-xl w-full max-w-lg my-auto relative max-h-[95vh] flex flex-col">
+      class="nutrition_popup-inner bg-white rounded-lg shadow-xl w-full max-w-lg my-auto relative max-h-[95vh] flex flex-col overflow-y-auto">
       <button id="nutrition-close-btn"
-        class="nutrition_popup-close absolute top-3 border-red-500 right-3 w-8 h-8 cursor-pointer z-20 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors flex items-center justify-center"
+        class="nutrition_popup-close absolute top-2 sm:top-3 right-2 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 cursor-pointer z-20 bg-white rounded-full p-1 shadow-md hover:bg-gray-100 transition-colors flex items-center justify-center"
         aria-label="Close">
-        <svg class="w-5 h-5 text-[#ff7d7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#ff7d7d]" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
-      <h2 class="main_product-title centered text-xl font-bold text-center py-3 px-4 shrink-0">Nutritional Information
+      <h2 class="main_product-title centered text-[24px] sm:text-xl font-bold text-center py-3 px-4 shrink-0">Nutritional Information
       </h2>
-      <div class="px-4 shrink-0">
+      <div class="px-2 sm:px-4 shrink-0">
         <img class="Desktop_only nutrition_image w-full h-auto object-contain"
           src="//trysculptique.com/cdn/shop/files/ingredients-min.png?v=1758713223" alt="Nutritional Information">
         <img class="Mobile_only nutrition_image w-full h-auto object-contain"
@@ -2445,19 +2445,19 @@
       </div>
 
       <div
-        class="main_product-btn bg-black text-white text-center py-3 px-4 mx-4 my-3 rounded cursor-pointer font-bold text-sm shrink-0">
+        class="main_product-btn bg-black text-white text-center py-3 px-4 mx-2 sm:mx-4 my-3 rounded cursor-pointer font-bold text-[16px] sm:text-sm shrink-0">
         Try Lymphatic Drainage Risk-Free
       </div>
 
-      <div class="main_product-points px-4 pb-4 grid grid-cols-2 gap-3 shrink-0">
+      <div class="main_product-points px-2 sm:px-4 pb-4 grid grid-cols-1 sm:grid-cols-2 gap-3 shrink-0">
         <div class="main_product-point-line flex items-center gap-2">
           <div>
             <img
               src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285"
-              alt="Check" class="w-5 h-5">
+              alt="Check" class="w-5 h-5 shrink-0">
           </div>
           <div>
-            <p class="text-sm">Made &amp; produced in the USA</p>
+            <p class="text-[16px] sm:text-sm">Made &amp; produced in the USA</p>
           </div>
         </div>
 
@@ -2465,21 +2465,10 @@
           <div>
             <img
               src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285"
-              alt="Check" class="w-5 h-5">
+              alt="Check" class="w-5 h-5 shrink-0">
           </div>
           <div>
-            <p class="text-sm">100% Natural Ingredients</p>
-          </div>
-        </div>
-
-        <div class="main_product-point-line flex items-center gap-2">
-          <div>
-            <img
-              src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285"
-              alt="Check" class="w-5 h-5">
-          </div>
-          <div>
-            <p class="text-sm">60-Day Money-Back Guarantee</p>
+            <p class="text-[16px] sm:text-sm">100% Natural Ingredients</p>
           </div>
         </div>
 
@@ -2487,10 +2476,21 @@
           <div>
             <img
               src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285"
-              alt="Check" class="w-5 h-5">
+              alt="Check" class="w-5 h-5 shrink-0">
           </div>
           <div>
-            <p class="text-sm">Free Shipping</p>
+            <p class="text-[16px] sm:text-sm">60-Day Money-Back Guarantee</p>
+          </div>
+        </div>
+
+        <div class="main_product-point-line flex items-center gap-2">
+          <div>
+            <img
+              src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Mark_Icon_ce1ad4c9-5ec0-4162-969e-b565980ab82b.png?v=1752127285"
+              alt="Check" class="w-5 h-5 shrink-0">
+          </div>
+          <div>
+            <p class="text-[16px] sm:text-sm">Free Shipping</p>
           </div>
         </div>
       </div>

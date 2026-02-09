@@ -145,34 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollProgress = document.getElementById('scroll-progress');
 
     if (videoScroll && scrollPrev && scrollNext && scrollProgress) {
-        const updateProgress = () => {
-            const totalVideos = videoScroll.children.length;
-            const visibleVideos = Math.round(videoScroll.clientWidth / videoScroll.children[0].clientWidth);
-            const scrollableWidth = videoScroll.scrollWidth - videoScroll.clientWidth;
-            const currentScroll = videoScroll.scrollLeft;
-
-            // Tính số "trang" hoặc view khác nhau
-            // Với 8 video và 4 video hiển thị, có 5 trang: (1-4), (2-5), (3-6), (4-7), (5-8)
-            const numPages = totalVideos - visibleVideos + 1; // Số trang khác nhau
-            const pagePercentage = 100 / numPages; // Mỗi trang = 20% (100% / 5 = 20%)
-
-            if (scrollableWidth <= 0) {
-                // Nếu không thể scroll, hiển thị 20% (trang đầu tiên)
-                scrollProgress.style.width = `${pagePercentage}%`;
-                return;
-            }
-
-            // Tính trang hiện tại dựa trên scroll position
-            const videoCardWidth = videoScroll.children[0].clientWidth + 16; // width + gap
-            const currentVideoIndex = Math.round(currentScroll / videoCardWidth);
-
-            // Progress = (trang hiện tại + 1) * 20%
-            // Trang 0 (đầu tiên) = 20%, trang 1 = 40%, ..., trang 4 = 100%
-            const progressPercentage = Math.min(100, (currentVideoIndex + 1) * pagePercentage);
-            scrollProgress.style.width = `${progressPercentage}%`;
-        };
-
-        // Tính khoảng scroll đúng bằng 1 card + gap để luôn canh đủ 4 video
+        // Tính khoảng scroll đúng bằng 1 card + gap để luôn canh theo từng "trang"
         const getScrollAmount = () => {
             const firstCard = videoScroll.querySelector('.video-card');
             if (!firstCard) return 0;
@@ -185,19 +158,67 @@ document.addEventListener('DOMContentLoaded', () => {
             return cardWidth + gap;
         };
 
+        const getNumPages = () => {
+            const totalVideos = videoScroll.children.length;
+            if (totalVideos === 0) return 0;
+            const firstCard = videoScroll.querySelector('.video-card') || videoScroll.children[0];
+            const visibleVideos = Math.round(videoScroll.clientWidth / firstCard.clientWidth) || 1;
+            return Math.max(1, totalVideos - visibleVideos + 1);
+        };
+
+        const updateProgress = () => {
+            const numPages = getNumPages();
+            if (numPages === 0) return;
+
+            const pagePercentage = 100 / numPages; // ví dụ: 5 trang => 20%
+
+            // Nếu chỉ có 1 trang (không thể scroll) thì luôn full 100%
+            if (numPages === 1) {
+                scrollProgress.style.width = '100%';
+                return;
+            }
+
+            const pageWidth = getScrollAmount();
+
+            if (pageWidth <= 0) {
+                // Không xác định được chiều rộng trang -> để 20% (trang đầu tiên)
+                scrollProgress.style.width = `${pagePercentage}%`;
+                return;
+            }
+
+            // Xác định trang hiện tại (0,1,2,3,4,...)
+            const currentPage = Math.round(videoScroll.scrollLeft / pageWidth);
+            const clampedPage = Math.min(numPages - 1, Math.max(0, currentPage));
+
+            // 20-40-60-80-100: mặc định = 20%, mỗi lần bấm Right tăng thêm 20%
+            const progressPercentage = Math.min(100, (clampedPage + 1) * pagePercentage);
+            scrollProgress.style.width = `${progressPercentage}%`;
+        };
+
         let scrollAmount = getScrollAmount();
 
         // Cập nhật lại khi resize để giữ đúng 4 video trên desktop
         window.addEventListener('resize', () => {
             scrollAmount = getScrollAmount();
+            updateProgress();
         });
 
         scrollPrev.addEventListener('click', () => {
-            videoScroll.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            const numPages = getNumPages();
+            if (!scrollAmount || !numPages) return;
+
+            const currentPage = Math.round(videoScroll.scrollLeft / scrollAmount);
+            const targetPage = Math.max(0, currentPage - 1);
+            videoScroll.scrollTo({ left: targetPage * scrollAmount, behavior: 'smooth' });
         });
 
         scrollNext.addEventListener('click', () => {
-            videoScroll.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            const numPages = getNumPages();
+            if (!scrollAmount || !numPages) return;
+
+            const currentPage = Math.round(videoScroll.scrollLeft / scrollAmount);
+            const targetPage = Math.min(numPages - 1, currentPage + 1);
+            videoScroll.scrollTo({ left: targetPage * scrollAmount, behavior: 'smooth' });
         });
 
         videoScroll.addEventListener('scroll', updateProgress);
@@ -419,4 +440,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const copy = logosSlide.cloneNode(true);
         logos.appendChild(copy);
     }
+
+    // FrontrowMD Modal Logic
+    const frontrowOverlay = document.getElementById('frontrow-modal-overlay');
+
+    const openFrontrowModalInternal = () => {
+        if (!frontrowOverlay) return;
+        frontrowOverlay.classList.remove('hidden');
+        document.body.classList.add('fr-modal-open');
+    };
+
+    const closeFrontrowModalInternal = () => {
+        if (!frontrowOverlay) return;
+        frontrowOverlay.classList.add('hidden');
+        document.body.classList.remove('fr-modal-open');
+    };
+
+    if (frontrowOverlay) {
+        frontrowOverlay.addEventListener('click', (e) => {
+            if (e.target === frontrowOverlay) {
+                closeFrontrowModalInternal();
+            }
+        });
+    }
+
+    // Expose functions for inline handlers
+    window.openFrontrowModal = (event) => {
+        if (event && event.preventDefault) {
+            event.preventDefault();
+        }
+        openFrontrowModalInternal();
+    };
+
+    window.closeFrontrowModal = () => {
+        closeFrontrowModalInternal();
+    };
+
+    window.closeAll = () => {
+        closeFrontrowModalInternal();
+    };
+
+    window.toggleDetails = (event) => {
+        // Optional hook – we rely mostly on CSS for plus/minus icons
+        // but keep this to avoid JS errors and for future analytics if needed.
+        if (!event) return;
+    };
+
+    window.openProviderModal = (event) => {
+        if (!event) return;
+        event.preventDefault();
+        const btn = event.currentTarget;
+        const website = btn?.getAttribute('data-website');
+        if (website) {
+            window.open(website, '_blank');
+        }
+    };
 });

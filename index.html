@@ -280,7 +280,7 @@
                   </style>
                   <button class="testimonial-cta" onclick="scrollToTestimonials(event)"
                     aria-label="Click to read reviews from clinicians sharing this product">
-                    <p>Read their reviews</p>
+                    <p class="hover:underline">Read their reviews</p>
                   </button>
                 </div>
 
@@ -885,10 +885,10 @@
 
           </div>
           <div class="p-6 flex-1 flex flex-col items-center text-center">
-            <h4 class="font-serif text-xl sm:text-2xl text-gray-900 leading-tight mb-4">
-              You cut out gluten, dairy, sugar. You ate clean for months.
+            <h4 class="font-serif text-xl sm:text-2xl text-gray-900 leading-tight whitespace-nowrap mb-4">
+              You cut out gluten, dairy, sugar. <br> You ate clean for months.
             </h4>
-            <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col justify-center">
+            <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col">
               <div class="flex items-center justify-center gap-2 mb-3">
                 <span class="font-['Nunito'] ">Why it failed</span>
                 <span class="text-[#d64545] font-bold text-xl">✕</span>
@@ -912,7 +912,7 @@
               You tried viral lymphatic drops from TikTok.
             </h4>
             <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col justify-center">
-              <div class="flex items-center justify-center gap-2 mb-3">
+              <div class="flex justify-center gap-2 mb-3">
                 <span class="font-['Nunito']">Why it failed</span>
                 <span class="text-[#d64545] font-bold text-xl">✕</span>
               </div>
@@ -934,7 +934,7 @@
             <h4 class="font-serif text-xl sm:text-2xl text-gray-900 leading-tight mb-4">
               You got lymphatic massage or bought compression socks.
             </h4>
-            <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col justify-center">
+            <div class="bg-[#ffe8e8] mt-auto py-2 px-4 rounded-2xl w-full flex-1 flex flex-col">
               <div class="flex items-center justify-center gap-2 mb-3">
                 <span class="font-['Nunito']">Why it failed</span>
                 <span class="text-[#d64545] font-bold text-xl">✕</span>
@@ -2011,26 +2011,21 @@
         </div>
 
         <!-- Navigation & Progress Bar -->
-        <div class="flex items-center gap-6 mt-8 px-2">
+        <div class="flex  items-center gap-24 px-2">
           <div class="flex-1 h-1 bg-gray-200 rounded-full relative overflow-hidden">
             <div class="absolute left-0 top-0 h-full w-0 bg-[#039869] rounded-full transition-all duration-300"
               id="scroll-progress"></div>
           </div>
           <div class="flex gap-3">
             <button
-              class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center transition-colors"
+              class="w-10 h-10 rounded-full  flex items-center justify-center transition-colors"
               id="scroll-prev">
-              <svg class="w-5 h-5 text-gray-600 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M9 5l7 7-7 7" />
-              </svg>
+              <img src="/public/assets/left.webp" alt="Previous" class="w-10 h-10 object-contain" />
             </button>
             <button
-              class="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center transition-colors"
+              class="w-10 h-10 rounded-full rotate-180 flex items-center justify-center transition-colors"
               id="scroll-next">
-              <svg class="w-5 h-5 text-gray-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 5l7 7-7 7" />
-              </svg>
+              <img src="/public/assets/right.webp" alt="Next" class="w-10 h-10 object-contain" />
             </button>
           </div>
         </div>
@@ -2601,6 +2596,235 @@
     </div>
   </div>
 
+  <!-- FrontrowMD Modal -->
+  <div id="frontrow-modal-overlay" class="fr-modal-overlay hidden">
+    <div class="fr-modal">
+      <div class="fr-modal-header-row">
+        <button type="button" class="fr-back-icon" onclick="closeFrontrowModal()" aria-label="Close this modal">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22.5 15L17.5 20L22.5 25" stroke="currentColor" stroke-width="2"></path>
+          </svg>
+        </button>
+        <img src="/assets/logo.avif" alt="FrontrowMD" class="fr-logo h-6 w-auto object-contain">
+        <button type="button" class="fr-close-icon" onclick="closeAll()" aria-label="Close all modals">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 11L11 1M1 1L11 11" stroke="currentColor" stroke-width="2"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="fr-modal-content">
+        <div class="fr-question-section">
+          <details class="fr-accordion" ontoggle="toggleDetails(event)" open>
+            <summary class="fr-accordion-content">
+              <p class="fr-question-title">Who is FrontrowMD?</p>
+              <span class="fr-expand-plus">
+                <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.0294282 8.99993H17M8.51471 0.514648V17.4852" stroke="#212121" stroke-width="3"></path>
+                </svg>
+              </span>
+              <span class="fr-expand-minus">
+                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="Icon" fill-rule="evenodd" clip-rule="evenodd" d="M0 0L10 0V2L0 2L0 0Z" fill="#212121"></path>
+                </svg>
+              </span>
+            </summary>
+            <span class="fr-question-answer">
+              <p>FrontrowMD is an independent, third-party platform on a mission to make it easier to discover health
+                products you can trust.</p>
+              <p>Here’s how: first, we make it easy for clinicians to share discounts on their own selection of health
+                products to help their patients. We often hear that our clinician partners are worried about patients
+                spending their hard-earned money on products that may not be best for them.</p>
+              <p>Then, we digitally track which products our clinicians include on their patient discount pages and
+                display that data to you, verifying that medical experts are choosing to share this product and making it
+                easier to discover the right product for you.</p>
+            </span>
+          </details>
+
+          <details class="fr-accordion" ontoggle="toggleDetails(event)">
+            <summary class="fr-accordion-content">
+              <p class="fr-question-title">Who / how many clinicians share this?</p>
+              <span class="fr-expand-plus">
+                <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.0294282 8.99993H17M8.51471 0.514648V17.4852" stroke="#212121" stroke-width="3"></path>
+                </svg>
+              </span>
+              <span class="fr-expand-minus">
+                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="Icon" fill-rule="evenodd" clip-rule="evenodd" d="M0 0L10 0V2L0 2L0 0Z" fill="#212121"></path>
+                </svg>
+              </span>
+            </summary>
+            <span class="fr-question-answer">
+              <p>Clinicians sharing this product include doctors, nurse practitioners, and physician associates. Right
+                now, 427 clinicians are including this product on their personalized patient discounts page, out of
+                hundreds of product options.</p>
+            </span>
+          </details>
+
+          <details class="fr-accordion" ontoggle="toggleDetails(event)">
+            <summary class="fr-accordion-content">
+              <p class="fr-question-title">What’s “Clinicians’ Choice” / “share” mean?</p>
+              <span class="fr-expand-plus">
+                <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.0294282 8.99993H17M8.51471 0.514648V17.4852" stroke="#212121" stroke-width="3"></path>
+                </svg>
+              </span>
+              <span class="fr-expand-minus">
+                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="Icon" fill-rule="evenodd" clip-rule="evenodd" d="M0 0L10 0V2L0 2L0 0Z" fill="#212121"></path>
+                </svg>
+              </span>
+            </summary>
+            <span class="fr-question-answer">
+              <p>Clinicians have the choice to add / remove any health product (either individually, or often in bulk) to
+                their patient discounts pages whenever they would like.</p>
+            </span>
+          </details>
+
+          <details class="fr-accordion" ontoggle="toggleDetails(event)">
+            <summary class="fr-accordion-content">
+              <p class="fr-question-title">Are clinicians paid to do this?</p>
+              <span class="fr-expand-plus">
+                <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.0294282 8.99993H17M8.51471 0.514648V17.4852" stroke="#212121" stroke-width="3"></path>
+                </svg>
+              </span>
+              <span class="fr-expand-minus">
+                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path id="Icon" fill-rule="evenodd" clip-rule="evenodd" d="M0 0L10 0V2L0 2L0 0Z" fill="#212121"></path>
+                </svg>
+              </span>
+            </summary>
+            <span class="fr-question-answer">
+              <p>No — clinicians are never compensated. This is a free platform for clinicians and patients.</p>
+            </span>
+          </details>
+        </div>
+
+        <div class="fr-provider-list-section">
+          <p class="fr-provider-list-title">
+            Clinicians who shared this product
+          </p>
+          <p class="fr-provider-list-subtitle">
+            For the complete list, <span class="underline cursor-pointer text-black" onclick="openProviderModal(event)">click here</span>. Numbers below indicate how many clinicians collaborate to share products on a single page at a medical practice.          </p>
+
+          <!-- Provider items -->
+          <div class="fr-provider-list-item">
+            <div class="fr-provider-info">
+              <button onclick="openProviderModal(event)" data-name="Dr. Mona Sadek, MD" data-website="https://lgphysicians.com/physicians/profile/Dr-Mona-Sadek-MD" class="fr-provider-name">
+                <figure class="expanded">
+                  <img alt="Portrait of Dr. Mona Sadek, MD" src="https://assets.app.thefrontrowhealth.com/km1xsqx5eazm6dus8r6hyzsu161s">
+                 
+                </figure>
+                <div>
+                  <span class="underline cursor-pointer text-black" onclick="openProviderModal(event)">Dr. Mona Sadek, MD</span>
+                  <p class="fr-provider-details">Roanoke, VA</p>
+                </div>
+              </button>
+            </div>
+            <div class="fr-view-store-button flex gap-2">
+               <a  href="https://app.thefrontrowhealth.com/provider/MSADEK/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1468, 'MSADEK')" aria-label="Preview Dr. Mona Sadek, MD discounts pages in a new tab">
+              Preview
+            </a>
+            <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+
+            </div>
+           
+          </div>
+
+          <div class="fr-provider-list-item">
+            <div class="fr-provider-info">
+              <button onclick="openProviderModal(event)" data-name="Dr. Mark Chewning" data-website="https://www.ptow.com/index.php" class="fr-provider-name">
+                <figure class="expanded">
+                  <img alt="Portrait of Dr. Mark Chewning" src="https://assets.app.thefrontrowhealth.com/cupevy2qn5lopnmiuppo0djjfam4">
+                </figure>
+                <div>
+                  <span class="underline cursor-pointer text-black" onclick="openProviderModal(event)">Dr. Mark Chewning</span>
+                  <p class="fr-provider-details">Roanoke, VA</p>
+                </div>
+              </button>
+            </div>
+            <div class="fr-view-store-button flex gap-2">
+              <a href="https://app.thefrontrowhealth.com/provider/MCHEWNING/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1457, 'MCHEWNING')" aria-label="Preview Dr. Mark Chewning discounts pages in a new tab">
+                Preview
+              </a>
+              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+            </div>
+          </div>
+
+          <div class="fr-provider-list-item">
+            <div class="fr-provider-info">
+              <button onclick="openProviderModal(event)" data-name="Dr. Iris Kaushik, MD" data-website="https://mdmedicalgroup.us/location/harrisburg-practice/" class="fr-provider-name">
+                <figure class="expanded">
+                  <img alt="Portrait of Dr. Iris Kaushik, MD" src="https://assets.app.thefrontrowhealth.com/tbmlgnoy0v7lo7gqln7vhktkfnbp">
+                </figure>
+                <div>
+                  <span class="underline cursor-pointer text-black" onclick="openProviderModal(event)">Dr. Iris Kaushik, MD</span>
+                  <p class="fr-provider-details">Houston, TX</p>
+                </div>
+              </button>
+            </div>
+            <div class="fr-view-store-button flex gap-2">
+              <a href="https://app.thefrontrowhealth.com/provider/IKAUSHIK/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1381, 'IKAUSHIK')" aria-label="Preview Dr. Iris Kaushik, MD discounts pages in a new tab">
+                Preview
+              </a>
+              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+            </div>
+          </div>
+
+          <div class="fr-provider-list-item">
+            <div class="fr-provider-info">
+              <button onclick="openProviderModal(event)" data-name="Dr. Jared Shipp, DPM" data-website="https://medipedispa.com/" class="fr-provider-name">
+                <figure class="expanded">
+                  <img alt="Portrait of Dr. Jared Shipp, DPM" src="https://assets.app.thefrontrowhealth.com/a33j0kefiyhuit0ilp6856pndg4l">
+                </figure>
+                <div>
+                  <span class="underline cursor-pointer text-black" onclick="openProviderModal(event)">Dr. Jared Shipp, DPM</span>
+                  <p class="fr-provider-details">Houston, TX</p>
+                </div>
+              </button>
+            </div>
+            <div class="fr-view-store-button flex gap-2">
+              <a href="https://app.thefrontrowhealth.com/provider/JSHIPP/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1348, 'JSHIPP')" aria-label="Preview Dr. Jared Shipp, DPM discounts pages in a new tab">
+                Preview
+              </a>
+              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+            </div>
+          </div>
+
+          <div class="fr-provider-list-item">
+            <div class="fr-provider-info">
+              <button onclick="openProviderModal(event)" data-name="Dr. Kurt Hubach, MD" data-website="https://bedforddpc.com/" class="fr-provider-name">
+                <figure class="expanded">
+                  <img alt="Portrait of Dr. Kurt Hubach, MD" src="https://assets.app.thefrontrowhealth.com/qogs9i7jmofid3eujc6rlatmoaqj">
+                </figure>
+                <div>
+                  <span class="underline cursor-pointer text-black" onclick="openProviderModal(event)">Dr. Kurt Hubach, MD</span>
+                  <p class="fr-provider-details">Bedford, VA</p>
+                </div>
+              </button>
+            </div>
+            <div class="fr-view-store-button flex gap-2">
+              <a href="https://app.thefrontrowhealth.com/provider/KHUBACH/all?preview_store=true&amp;spi=true&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;utm_medium=2691&amp;utm_source=880&amp;sort=featured&amp;pid=2691" target="_blank" onclick="frTrackClickPreview(1471, 'KHUBACH')" aria-label="Preview Dr. Kurt Hubach, MD discounts pages in a new tab">
+                Preview
+              </a>
+              <img src="/assets/link.svg" alt="Link" class="w-4 h-4">
+            </div>
+          </div>
+        </div>
+
+        <div class="fr-full-provider-list-bottom">
+          <a class="" href="https://app.thefrontrowhealth.com/general-store/all?pid=2691&amp;utm_source=880&amp;utm_medium=2691&amp;utm_campaign=brands_website&amp;utm_content=modal&amp;spi=true" target="_blank" onclick="frTrackClickCompleteList()" aria-label="Click here to see the complete list of clinicians in a new tab">
+            <span>See the full list of clinicians and learn more</span>
+          </a>
+        </div>
+        <div class="fr-disclaimer">
+          <p>Please consult your own medical provider before buying health products online, as neither FrontrowMD nor our clinician partners are providing medical advice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script type="module" src="./src/main.js"></script>
   <style>
     .scrollbar-hide::-webkit-scrollbar {
@@ -2654,6 +2878,240 @@
         max-width: calc((100% - (3 * var(--video-gap))) / 4);
         min-width: 0 !important;
       }
+    }
+
+    /* FrontrowMD Modal */
+    .fr-modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      z-index: 1000;
+      padding-top: 80px;
+    }
+
+    .fr-modal-overlay.hidden {
+      display: none;
+    }
+
+    .fr-modal {
+      background: #ffffff;
+      border-radius: 16px;
+      width: min(530px, 95vw);
+      height: min(620px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    .fr-modal-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      border-bottom: 1px solid #eee;
+      position: relative;
+    }
+
+    .fr-modal-logo {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .fr-modal-logo a {
+      pointer-events: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fr-back-icon,
+    .fr-close-icon {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: #212121;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fr-logo {
+      filter: invert(1);
+    }
+
+    .fr-modal-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .fr-question-title {
+      font-weight: 600;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #212121;
+    }
+
+    .fr-accordion {
+     
+      padding: 12px 16px;
+      margin-bottom: 10px;
+
+    }
+
+    .fr-accordion-content {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .fr-accordion-content::-webkit-details-marker {
+      display: none;
+    }
+
+    .fr-question-answer {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+      line-height: 1.5;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .fr-expand-minus {
+      display: none;
+    }
+
+    .fr-accordion[open] .fr-expand-plus {
+      display: none;
+    }
+
+    .fr-accordion[open] .fr-expand-minus {
+      display: inline-flex;
+    }
+
+    .fr-provider-list-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .fr-provider-list-subtitle {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    .fr-view-all-link {
+      text-decoration: underline;
+      color: #039869;
+      font-weight: 600;
+    }
+
+    .fr-provider-list-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .fr-provider-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .fr-provider-name {
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .fr-provider-name figure {
+      margin: 0;
+      position: relative;
+    }
+
+    .fr-provider-name img {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      object-fit: cover;
+    }
+
+    .fr-provider-name figcaption {
+      position: absolute;
+      right: -4px;
+      bottom: -4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #039869;
+      color: #fff;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    .fr-provider-details {
+      font-size: 12px;
+      color: #666;
+      margin: 0;
+    }
+
+    .fr-view-store-button {
+      border-radius: 24px;
+      background-color: #EEE;
+      padding: 10px 20px;
+      font-size: 13px;
+    
+      font-weight: 600;
+   
+      white-space: nowrap;
+    }
+
+    .fr-full-provider-list-bottom {
+      margin-top: 12px;
+    }
+
+    .fr-view-all-providers-link-bottom {
+      font-size: 13px;
+      color: #039869;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .fr-disclaimer {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    body.fr-modal-open {
+      overflow: hidden;
     }
 
     /* Clinicians' Choice Badge Styles */

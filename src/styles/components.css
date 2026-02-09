@@ -161,4 +161,25 @@
   }
 }
 
+/* Mobile Gallery Thumbnails */
+.mobile-thumbnail {
+  opacity: 0.7;
+  transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+
+.mobile-thumbnail:hover {
+  opacity: 1;
+}
+
+.mobile-thumbnail.active-thumbnail {
+  opacity: 1;
+  border-color: #039869 !important;
+}
+
+.mobile-thumbnail img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 

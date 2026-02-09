@@ -102,18 +102,21 @@
             </div>
           </div>
 
-          <!-- Mobile: Scroll-Snap Carousel -->
-          <div class="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 p-4 scrollbar-hide">
-            <div class="snap-center shrink-0 w-[85vw] relative">
-              <img src="/assets/product-images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
-                alt="Sculptique Capsules" class="w-full h-auto rounded-lg shadow-sm">
+          <!-- Mobile: Gallery with Main Image and Thumbnails -->
+          <div class="md:hidden">
+            <!-- Main Image Container -->
+            <div class="relative mb-4">
+              <img id="mobile-main-image" 
+                src="/assets/product-images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
+                alt="Sculptique Capsules" 
+                class="w-full h-auto rounded-lg shadow-sm">
               <!-- Valentine's Day Sale Badge (Mobile) -->
-              <div class="absolute top-4 right-4 z-[3] flex items-center justify-center">
+              <div id="mobile-badge" class="absolute top-4 right-4 z-[3] flex items-center justify-center">
                 <img src="/assets/badges/valentine.avif" alt="Valentine's Day Sale" class="w-auto h-auto max-w-[120px] object-contain">
               </div>
               <!-- Nutritional Information Button (Mobile) -->
-              <div id="nutrition-info-btn-mobile"
-                class="main_product-nutrition-info absolute bottom-4 left-1/2 -translate-x-1/2 z-[2] flex items-center justify-center gap-2 leading-[1.2em] max-w-[290px] py-2 px-6 bg-[#ffffffd9] border border-black rounded-[24px] cursor-pointer text-sm">
+              <div id="mobile-nutrition-btn"
+                class="main_product-nutrition-info absolute bottom-4 left-1/2 -translate-x-1/2 z-[2] flex items-center justify-center gap-2 leading-[1.2em] w-60 py-2 px-6 bg-[#ffffffd9] border border-black rounded-[24px] cursor-pointer text-sm">
                 <span>
                   <img
                     src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/leaves_1247958_1_cf2e7df4-c113-4c3a-be49-f876ec94d873.png?v=1766822629"
@@ -123,26 +126,97 @@
                   Nutritional Information
                 </span>
               </div>
+              <!-- Navigation Buttons -->
+              <button id="mobile-gallery-prev" 
+                class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-all">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button id="mobile-gallery-next" 
+                class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-all">
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
             </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard2.jpg" loading="lazy"
-                class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" loading="lazy"
-                class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard4.jpg" loading="lazy"
-                class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" loading="lazy"
-                class="w-full h-auto rounded-lg shadow-sm">
-            </div>
-            <div class="snap-center shrink-0 w-[85vw]">
-              <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" loading="lazy"
-                class="w-full h-auto rounded-lg shadow-sm">
+            
+            <!-- Thumbnail Container -->
+            <div id="mobile-thumbnail-container" class="overflow-hidden pb-2 relative">
+              <div id="mobile-thumbnail-wrapper" class="flex gap-2 transition-transform duration-300 ease-in-out" style="transform: translateX(0);">
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all active-thumbnail" 
+                data-index="0" 
+                data-src="/assets/product-images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg"
+                data-has-badge="true"
+                data-has-button="true">
+                <img src="/assets/product-images/LymoPDPImagesArtboard1_8e287aa1-576e-42b1-9a87-ce2fcdaded3a.jpg" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="1" 
+                data-src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard2.jpg"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard2.jpg" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="2" 
+                data-src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard3copy.jpg" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="3" 
+                data-src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard4.jpg"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard4.jpg" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="4" 
+                data-src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_1.jpg" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="5" 
+                data-src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/product-images/LymphDrainageREWAMPEDvisualsArtboard5_2.jpg" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="6" 
+                data-src="/assets/symptoms/tiredness-min.png"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/symptoms/tiredness-min.png" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              <div class="mobile-thumbnail shrink-0 w-[23%] cursor-pointer border-2 border-transparent rounded-lg overflow-hidden transition-all" 
+                data-index="7" 
+                data-src="/assets/symptoms/puffiness-min.png"
+                data-has-badge="false"
+                data-has-button="false">
+                <img src="/assets/symptoms/puffiness-min.png" 
+                  loading="lazy"
+                  class="w-full h-auto rounded-lg">
+              </div>
+              </div>
             </div>
           </div>
         </div>
@@ -155,7 +229,7 @@
               <div class="flex items-center">
                 <img src="/assets/badges/five_stars.png" alt="5 Stars" class="h-[18px] w-auto object-contain">
               </div>
-              <span class="text-[16px] font-[Nunito]">4.8/5
+              <span class="sm:text-[16px] text-[12px] font-[Nunito]">4.8/5
                 Excellent | Based on 2381 Reviews</span>
             </div>
           </div>
@@ -576,7 +650,7 @@
   <!-- ============================================ -->
     <div class="section_press_logos_outer bg-[#f3eee0] py-5 w-full overflow-hidden">
       <div class="w-full">
-        <h3 class="text-center font-['Trirong'] text-[24px] md:text-2xl text-gray-900 mb-5">As Seen In</h3>
+        <h3 class="text-center font-['Trirong'] text-[18px] sm:text-[24px] md:text-2xl text-gray-900 mb-5">As Seen In</h3>
         <div class="marquee-container overflow-hidden w-full">
           <div class="marquee-track flex">
             <div class="marquee-slide flex items-center">
@@ -619,10 +693,10 @@
   <!-- ============================================ -->
   <!-- WHY YOUR BLOATING IS CONNECTED SECTION -->
   <!-- ============================================ -->
-  <section class="max-w-[1340px] box-border mx-auto pt-14 px-4 sm:px-[50px]">
+  <section class="max-w-[1340px] box-border mx-auto pt-8 sm:pt-14 px-4 sm:px-[50px]">
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-      <h2 class="font-['Lora'] text-[24px] sm:text-[24px] md:text-4xl text-gray-900 leading-[1.2] mb-6">
+    <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16">
+      <h2 class="font-['Lora'] text-[24px] sm:text-2xl md:text-4xl text-gray-900 leading-[1.2] mb-4 sm:mb-6">
         Why Your <span class="text-[#039869]">Bloating, Brain Fog & Swollen Legs</span> Are Actually Connected
       </h2>
       <p class="text-[16px] sm:text-lg font-[Nunito]">
@@ -631,53 +705,53 @@
     </div>
 
     <!-- Symptom Grid -->
-    <div class="grid font-[Nunito] grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+    <div class="flex font-[Nunito] flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
       <!-- Item 1 -->
-      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-col shadow-sm">
+      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-row sm:flex-col shadow-sm">
         <img src="//trysculptique.com/cdn/shop/files/Untitled_design_3.png?v=1760689800" alt="Bloating"
-          class="w-full h-auto">
-        <div class="p-3 sm:p-4 text-center flex-1 flex items-center justify-center">
-          <p class="text-[16px] font-semibold text-gray-800 leading-snug">
+          class="w-1/2 sm:w-full h-auto object-cover shrink-0">
+        <div class="p-4 flex-1 flex items-center justify-center">
+          <p class="text-[16px] font-semibold text-gray-800 leading-snug  text-center">
             Your stomach is flat in the morning, but by evening you look six months pregnant.
           </p>
         </div>
       </div>
       <!-- Item 2 -->
-      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-col shadow-sm">
+      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-row sm:flex-col shadow-sm">
         <img src="//trysculptique.com/cdn/shop/files/Untitled_design_3_1.png?v=1760689799" alt="Swollen legs"
-          class="w-full h-auto">
-        <div class="p-3 sm:p-4 flex-1 flex justify-center">
-          <p class="text-[16px] sm:text-xs md:text-[16px] text-center font-semibold text-gray-800 leading-snug">
+          class="w-1/2 sm:w-full h-auto object-cover shrink-0">
+        <div class="p-4 flex-1 flex items-center justify-center">
+          <p class="text-[16px] sm:text-center font-semibold text-gray-800 text-center leading-snug">
             Your ankles disappear into "kankles" by the end of the day.
           </p>
         </div>
       </div>
       <!-- Item 3 -->
-      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-col shadow-sm">
+      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-row sm:flex-col shadow-sm">
         <img src="//trysculptique.com/cdn/shop/files/Untitled_design_4.png?v=1760689801" alt="Cellulite"
-          class="w-full h-auto">
-        <div class="p-3 sm:p-4 flex-1 flex justify-center">
-          <p class="text-[16px] sm:text-xs md:text-[16px] text-center font-semibold text-gray-800 leading-snug">
+          class="w-1/2 sm:w-full h-auto object-cover shrink-0">
+        <div class="p-4 flex-1 flex items-center justify-center">
+          <p class="text-[16px] sm:text-center font-semibold text-gray-800 text-center leading-snug">
             That dimpled, cottage cheese texture on your thighs won't go away no matter what you try.
           </p>
         </div>
       </div>
       <!-- Item 4 -->
-      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-col shadow-sm">
+      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-row sm:flex-col shadow-sm">
         <img src="//trysculptique.com/cdn/shop/files/Untitled_design_4_1.png?v=1760689799" alt="Brain fog"
-          class="w-full h-auto">
-        <div class="p-3 sm:p-4 flex-1 flex justify-center">
-          <p class="text-[16px] sm:text-xs md:text-[16px] text-center font-semibold text-gray-800 leading-snug">
+          class="w-1/2 sm:w-full h-auto object-cover shrink-0">
+        <div class="p-4 flex-1 flex items-center justify-center">
+          <p class="text-[16px]  sm:text-center font-semibold text-gray-800 text-center leading-snug">
             You feel foggy and exhausted even after a full night's sleep.
           </p>
         </div>
       </div>
       <!-- Item 5 -->
-      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-col shadow-sm">
+      <div class="bg-[#f8f8f8] rounded-2xl overflow-hidden flex flex-row sm:flex-col shadow-sm">
         <img src="//trysculptique.com/cdn/shop/files/Untitled_design_3_2.png?v=1760689799" alt="Morning stiffness"
-          class="w-full h-auto">
-        <div class="p-3 sm:p-4 flex-1 flex justify-center">
-          <p class="text-[16px] sm:text-xs md:text-[16px] text-center font-semibold text-gray-800 leading-snug">
+          class="w-1/2 sm:w-full h-auto object-cover shrink-0">
+        <div class="p-4 flex-1 flex items-center justify-center">
+          <p class="text-[16px] sm:text-center font-semibold text-gray-800 text-center leading-snug">
             You wake up stiff and achy, like your body aged overnight.
           </p>
         </div>
@@ -685,7 +759,7 @@
     </div>
 
     <!-- Arrows and Callout -->
-    <div>
+    <div class="my-6 sm:my-8">
       <img src="//trysculptique.com/cdn/shop/files/Group_7207.png?v=1760690771"
         class="hidden md:block w-full max-w-4xl mx-auto" alt="Explanation arrows">
       <img src="//trysculptique.com/cdn/shop/files/Frame_1000003583.png?v=1760690769" class="md:hidden w-full"
@@ -693,20 +767,20 @@
     </div>
 
     <!-- Double Down Arrow -->
-    <div class="flex justify-center my-6">
+    <div class="flex justify-center my-4 sm:my-6">
       <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
         class="w-10 sm:w-12 h-auto" alt="Next section arrow">
     </div>
 
     <!-- Connection Section -->
-    <div class="text-center mb-4">
+    <div class="text-center mb-4 sm:mb-6">
       <h2 class="font-['Lora'] text-[24px] sm:text-2xl md:text-[32px] text-gray-900 leading-[1.2]">
         The Connection <span class="text-[#039869]">You've Been Missing</span>
       </h2>
     </div>
 
     <!-- Connection Table Image -->
-    <div>
+    <div class="mb-4 sm:mb-6">
       <img src="//trysculptique.com/cdn/shop/files/Frame_1000003590.png?v=1760690771"
         class="hidden md:block w-full max-w-4xl mx-auto rounded" alt="Connection table desktop">
       <img src="//trysculptique.com/cdn/shop/files/Frame_1000003590_1.png?v=1760690770"
@@ -714,7 +788,7 @@
     </div>
 
     <!-- Last Down Arrow -->
-    <div class="flex justify-center mt-6">
+    <div class="flex justify-center mt-4 sm:mt-6">
       <img src="https://cdn.shopify.com/s/files/1/0917/5649/5191/files/Frame_1000003589.png?v=1760690549"
         class="w-10 sm:w-12 h-auto" alt="Next section arrow">
     </div>
@@ -2191,11 +2265,11 @@
           </h2>
 
           <div class="space-y-4 text-black text-[16px] sm:text-lg leading-relaxed">
-            <p class="font-['Nunito']">
+            <p class="font-['Nunito'] sm:text-[16px] text-[18px]">
               You deserve to feel like yourself again. To wake up without puffiness. To see your ankles. To look in the
               mirror and recognize the vibrant woman staring back. To have energy for the people you love.
             </p>
-            <p class="font-['Nunito'] my-3">
+            <p class="font-['Nunito'] my-3 sm:text-[16px] text-[18px]">
               You deserve a solution that actually works. Not temporary relief. Not symptom masking. Complete lymphatic
               restoration.
             </p>
@@ -2208,9 +2282,9 @@
           </div>
 
           <div class="items-start gap-4 pt-4">
-            <div class="w-[90%]">
+            <div class="sm:w-[90%] w-full">
               <button
-                class="bg-black hover:bg-gray-800 w-[89%] text-white font-['Nunito'] text-[16px] sm:text-[18px] py-4 px-10 rounded-md transition-all duration-300 shadow-md transform tracking-wide">
+                class="bg-black hover:bg-gray-800 w-full sm:w-[89%] text-white font-['Nunito'] text-[16px] sm:text-[18px] py-4 px-10 rounded-md transition-all duration-300 shadow-md transform tracking-wide">
                 Try Lymphatic Drainage Risk-Free
               </button>
             </div>

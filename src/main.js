@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Nutritional Information Modal Logic
     const nutritionBtn = document.getElementById('nutrition-info-btn');
-    const nutritionBtnMobile = document.getElementById('nutrition-info-btn-mobile');
+    const nutritionBtnMobile = document.getElementById('mobile-nutrition-btn') || document.getElementById('nutrition-info-btn-mobile');
     const nutritionModal = document.getElementById('nutrition-modal');
     const nutritionCloseBtn = document.getElementById('nutrition-close-btn');
 
@@ -838,4 +838,111 @@ document.addEventListener('DOMContentLoaded', () => {
             // Keep 'closing' class to maintain the hidden state
         }, 750); // Match transition duration
     };
+
+    // Mobile Gallery Navigation
+    const mobileMainImage = document.getElementById('mobile-main-image');
+    const mobileBadge = document.getElementById('mobile-badge');
+    const mobileNutritionBtn = document.getElementById('mobile-nutrition-btn');
+    const mobileGalleryPrev = document.getElementById('mobile-gallery-prev');
+    const mobileGalleryNext = document.getElementById('mobile-gallery-next');
+    const mobileThumbnails = document.querySelectorAll('.mobile-thumbnail');
+    const mobileThumbnailContainer = document.getElementById('mobile-thumbnail-container');
+    const mobileThumbnailWrapper = document.getElementById('mobile-thumbnail-wrapper');
+
+    if (mobileMainImage && mobileThumbnails.length > 0) {
+        let currentIndex = 0;
+        const totalImages = mobileThumbnails.length;
+        const visibleThumbnails = 4; // Show 4 thumbnails at a time
+
+        const updateThumbnailPosition = (index) => {
+            if (!mobileThumbnailWrapper || !mobileThumbnailContainer) return;
+
+            // Calculate which 4 thumbnails to show
+            // If index is in the last 4, show the last 4
+            // Otherwise, show thumbnails starting from current index
+            let startIndex = index;
+            if (index > totalImages - visibleThumbnails) {
+                startIndex = totalImages - visibleThumbnails;
+            } else if (index < 0) {
+                startIndex = 0;
+            }
+
+            // Calculate translateX: each thumbnail is 23% width + gap (0.5rem = 8px)
+            // We need to move the wrapper to show the correct 4 thumbnails
+            const containerWidth = mobileThumbnailContainer.offsetWidth;
+            const thumbnailWidthPercent = 23; // 23% width per thumbnail
+            const gap = 8; // 0.5rem = 8px
+            const thumbnailWidth = (containerWidth * thumbnailWidthPercent) / 100;
+            const translateX = -(startIndex * (thumbnailWidth + gap));
+
+            mobileThumbnailWrapper.style.transform = `translateX(${translateX}px)`;
+        };
+
+        const updateMainImage = (index) => {
+            const thumbnail = mobileThumbnails[index];
+            if (!thumbnail) return;
+
+            const newSrc = thumbnail.getAttribute('data-src');
+            const hasBadge = thumbnail.getAttribute('data-has-badge') === 'true';
+            const hasButton = thumbnail.getAttribute('data-has-button') === 'true';
+
+            // Update main image
+            mobileMainImage.src = newSrc;
+            mobileMainImage.alt = thumbnail.querySelector('img')?.alt || 'Sculptique Product';
+
+            // Show/hide badge
+            if (mobileBadge) {
+                mobileBadge.style.display = hasBadge ? 'flex' : 'none';
+            }
+
+            // Show/hide nutrition button
+            if (mobileNutritionBtn) {
+                mobileNutritionBtn.style.display = hasButton ? 'flex' : 'none';
+            }
+
+            // Update active thumbnail
+            mobileThumbnails.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('active-thumbnail');
+                    thumb.classList.add('border-[#039869]');
+                    thumb.classList.remove('border-transparent');
+                } else {
+                    thumb.classList.remove('active-thumbnail');
+                    thumb.classList.remove('border-[#039869]');
+                    thumb.classList.add('border-transparent');
+                }
+            });
+
+            // Update thumbnail position to show correct 4 thumbnails
+            updateThumbnailPosition(index);
+
+            currentIndex = index;
+        };
+
+        // Thumbnail click handler
+        mobileThumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                updateMainImage(index);
+            });
+        });
+
+        // Previous button handler - infinite loop
+        if (mobileGalleryPrev) {
+            mobileGalleryPrev.addEventListener('click', () => {
+                const newIndex = currentIndex === 0 ? totalImages - 1 : currentIndex - 1;
+                updateMainImage(newIndex);
+            });
+        }
+
+        // Next button handler - infinite loop
+        if (mobileGalleryNext) {
+            mobileGalleryNext.addEventListener('click', () => {
+                const newIndex = currentIndex === totalImages - 1 ? 0 : currentIndex + 1;
+                updateMainImage(newIndex);
+            });
+        }
+
+        // Initialize: show first 4 thumbnails
+        updateThumbnailPosition(0);
+    }
 });
